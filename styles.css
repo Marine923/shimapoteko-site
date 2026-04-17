@@ -1069,6 +1069,66 @@ section { padding: 5.5rem 0; }
 .mt-3 { margin-top: 3rem; }
 .mb-1 { margin-bottom: 1rem; }
 
+/* ---------- Products page (products.html) ---------- */
+/* カテゴリアンカーナビ：sticky で上部に張り付く */
+.category-nav {
+  position: sticky; top: 72px; z-index: 20;
+  background: rgba(247, 241, 227, 0.94);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--hai-light);
+  border-bottom: 1px solid var(--hai-light);
+}
+.category-nav .container {
+  display: flex; justify-content: center; gap: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.category-nav .container::-webkit-scrollbar { display: none; }
+.category-nav a {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.85rem; letter-spacing: 0.15em;
+  color: var(--sumi-soft);
+  padding: 0.4rem 0.25rem;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.category-nav a:hover { color: var(--akatsuchi); border-bottom-color: var(--akatsuchi); }
+
+/* Future card（準備中の商品カード）：半透明 + COMING SOON ラベル */
+.product-card.future {
+  opacity: 0.78;
+  background: var(--ivory-warm);
+  border-style: dashed;
+}
+.product-card.future:hover {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.95;
+}
+.product-card.future .product-image {
+  background: linear-gradient(135deg, #d9d1bf 0%, #b8ae9a 100%);
+  display: grid; place-items: center;
+}
+.product-card.future .product-image::after {
+  display: none;
+}
+.coming-soon-label {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.85rem; letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(42, 34, 32, 0.15);
+  z-index: 2;
+}
+.product-card.future .product-price {
+  color: var(--sumi-soft);
+  font-size: 1rem;
+}
+.product-card.future .product-tag { color: var(--sumi-soft); }
+
 /* ---------- Mobile rhythm overrides ----------
    PC 前提の余白をモバイルで圧縮し、情報密度を上げる */
 @media (max-width: 639px) {
