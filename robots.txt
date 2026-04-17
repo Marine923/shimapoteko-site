@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marine923.github.io/shimapoteko-site/sitemap.xml
