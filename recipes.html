@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>壱岐レシピ帖｜島ポテこ</title>
+<meta name="description" content="島ポテこを買った方だけに届く、毎月更新の「壱岐レシピ帖」。月替わりで壱岐の料理人が、この島のじゃがいもの楽しみ方を教えてくれます。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://marine923.github.io/shimapoteko-site/recipes.html">
+<meta name="theme-color" content="#a4583a">
+<meta property="og:site_name" content="島ポテこ">
+<meta property="og:title" content="壱岐レシピ帖｜島ポテこ">
+<meta property="og:description" content="島ポテこを買った方だけに届く、毎月更新の「壱岐レシピ帖」。月替わりで壱岐の料理人が登場します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marine923.github.io/shimapoteko-site/recipes.html">
+<meta property="og:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="壱岐レシピ帖｜島ポテこ">
+<meta name="twitter:description" content="島ポテこを買った方だけに届く、毎月更新の「壱岐レシピ帖」。">
+<meta name="twitter:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">島</span>
+      <span>
+        <div class="brand-name">島ポテこ</div>
+        <div class="brand-sub">SHIMA POTEKO</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#products">商品</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="recipes.html">レシピ帖</a>
+      <a href="restaurants.html">レストランの方へ</a>
+      <a href="index.html#news">お知らせ</a>
+    </nav>
+    <a href="#" class="header-cta" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+    <button class="nav-toggle" aria-label="メニューを開く" onclick="document.body.classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-label="モバイルメニュー">
+  <div class="menu-sub">SHOP</div>
+  <a href="index.html#products">商品</a>
+  <a href="recipes.html">壱岐レシピ帖</a>
+  <a href="index.html#news">お知らせ</a>
+  <div class="menu-sub">STORY</div>
+  <a href="index.html#story">テロワール</a>
+  <a href="producers.html">生産者紹介</a>
+  <div class="menu-sub">BUSINESS</div>
+  <a href="restaurants.html">レストランの方へ</a>
+  <div class="menu-sub">ABOUT</div>
+  <a href="about.html">会社概要</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tokutei.html">特定商取引法に基づく表記</a>
+  <a href="#" class="cart" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-eyebrow">ISLAND RECIPE BOOK</span>
+    <h1>壱岐レシピ帖</h1>
+    <p>月替わりで、壱岐の料理人が登場します。<br>島で暮らす人だけが知る、じゃがいものいちばんの楽しみ方を。</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-sm">
+    <div class="recipe-book-intro">
+      <div class="tag-line">FOR OUR CUSTOMERS</div>
+      <h2>島ポテこをお買い上げの方へ<br>お届けする、ちいさな月刊誌。</h2>
+      <p>
+        壱岐には、赤土のじゃがいもを誰よりも美味しく食べてきた人たちがいます。居酒屋の店主、カフェのオーナー、郷土料理のお母さん、漁師、移住してきた人──。島ポテこはその人たちから、毎月ひとりに料理を教わり、小さな冊子にして、お買い上げの方にお届けします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ivory-soft); padding: 3rem 0;">
+  <div class="container-sm">
+    <div class="text-center">
+      <span class="issue-label">第壱号 ／ 2026年 葉月の候</span>
+      <h2 style="font-size: 1.4rem; margin: 0 0 0.5rem;">今月の料理人</h2>
+      <p style="color: var(--sumi-soft); font-size: 0.9rem; margin: 0 0 2rem;">
+        ※ 試作版のため、料理人情報は架空の設定です。実運用時には実在の方に出演いただきます。
+      </p>
+    </div>
+
+    <article class="chef-card">
+      <div class="chef-portrait">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="料理人のシルエット">
+          <defs>
+            <linearGradient id="chefBg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#efe6d0"/>
+              <stop offset="100%" stop-color="#d9be8d"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#chefBg)"/>
+          <circle cx="100" cy="75" r="32" fill="#7d3d26" opacity="0.85"/>
+          <path d="M 45 200 C 45 145, 75 115, 100 115 C 125 115, 155 145, 155 200 Z" fill="#2a2220" opacity="0.85"/>
+          <rect x="88" y="55" width="24" height="10" fill="#2a2220" opacity="0.5"/>
+        </svg>
+        <span class="ph-label">PORTRAIT 予定</span>
+      </div>
+      <div class="chef-meta">
+        <div class="chef-role">居酒屋店主 ／ SHIOZE-TEI</div>
+        <h3>潮騒亭・山田 健一</h3>
+        <div class="chef-store">長崎県壱岐市 郷ノ浦町・創業1998年</div>
+        <p class="chef-bio">
+          壱岐生まれ、壱岐育ち。28歳で実家の居酒屋を継ぎ、以来カウンター越しに島の食材を焼き続けて四半世紀。島ポテこの小粒を「麦焼酎にいちばん近いじゃがいも」と呼び、店の定番メニューに。今回の第壱号では、カウンターの常連客がいちばん最初に注文する一皿を教わります。
+        </p>
+      </div>
+    </article>
+
+    <div class="menu-teaser">
+      <div class="menu-teaser-head">
+        <div class="eyebrow">TONIGHT'S MENU</div>
+        <h3>今月のお品書き</h3>
+      </div>
+      <ul>
+        <li>
+          <span class="locked-title">藻塩バター焼き、麦焼酎添え</span>
+          <span class="locked-badge">LOCKED</span>
+        </li>
+        <li>
+          <span class="locked-title">新じゃがと壱岐豚の肴皿</span>
+          <span class="locked-badge">LOCKED</span>
+        </li>
+        <li>
+          <span class="locked-title">締めの芋しゃぶ、昆布出汁で</span>
+          <span class="locked-badge">LOCKED</span>
+        </li>
+      </ul>
+      <p style="text-align: center; margin: 1.5rem 0 0; color: var(--sumi-soft); font-size: 0.85rem;">
+        ご購入者様限定の「合言葉」で全文をご覧いただけます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-sm">
+    <div class="passphrase-box">
+      <h3>合言葉を入力してください</h3>
+      <p class="helper">
+        島ポテこをご購入いただいた方に、注文確定メールで<br>
+        毎月の「合言葉」をお届けしています。
+      </p>
+      <form class="passphrase-form" id="passphraseForm" autocomplete="off">
+        <input
+          type="text"
+          class="passphrase-input"
+          id="passphraseInput"
+          placeholder="ひらがなで入力"
+          aria-label="合言葉"
+          required>
+        <button type="submit" class="passphrase-submit">開く</button>
+      </form>
+      <p class="passphrase-error" id="passphraseError" role="alert" aria-live="polite"></p>
+      <p style="font-size: 0.75rem; color: var(--sumi-soft); margin: 1.5rem 0 0;">
+        ※ 試作版では <strong>あかつちのこがね</strong> でお試しいただけます（本来はメールで配布）。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-concept">
+  <div class="container-sm">
+    <div class="section-head">
+      <span class="section-eyebrow">BACK ISSUES</span>
+      <h2 class="section-title">これまでの料理人</h2>
+    </div>
+    <div class="backissue-grid">
+      <div class="backissue-card">
+        <div class="issue-no">第壱号 ／ 6月</div>
+        <h4>藻塩バター焼き、麦焼酎添え</h4>
+        <div class="chef">潮騒亭・山田健一（居酒屋店主）</div>
+      </div>
+      <div class="backissue-card future">
+        <div class="issue-no">第貳号 ／ 7月</div>
+        <h4>壱岐のカフェ風ガレット</h4>
+        <div class="chef">Coming Soon（カフェオーナー）</div>
+      </div>
+      <div class="backissue-card future">
+        <div class="issue-no">第参号 ／ 8月</div>
+        <h4>漁師のいも煮</h4>
+        <div class="chef">Coming Soon（漁師）</div>
+      </div>
+    </div>
+    <p class="text-center" style="color: var(--sumi-soft); font-size: 0.85rem; margin: 1.5rem 0 0;">
+      バックナンバーも、合言葉を入力すればいつでも読めます。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">FREE RECIPES</span>
+      <h2 class="section-title">無料で読める基本レシピ</h2>
+      <p class="section-desc">はじめての方向けに、壱岐の味を楽しむ3つの基本をご紹介します。</p>
+    </div>
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <span class="time">調理時間 3分</span>
+        <h3>レンジで塩バター</h3>
+        <span class="difficulty easy">やさしい</span>
+        <p>洗ってラップし、600Wで3分。割って塩とバターをひとかけ。はじめての方にぴったり。</p>
+        <span class="texture-note">── ほくほくとねっとりの、中間の食感</span>
+      </div>
+      <div class="recipe-card">
+        <span class="time">調理時間 5分</span>
+        <h3>皮ごと素揚げ</h3>
+        <span class="difficulty easy">やさしい</span>
+        <p>180℃の油で3分。仕上げに藻塩を。皮のミネラル感が口に広がります。</p>
+        <span class="texture-note">── 外はカリッ、中はしっとり</span>
+      </div>
+      <div class="recipe-card">
+        <span class="time">調理時間 15分</span>
+        <h3>焦げない黄金のフリット</h3>
+        <span class="difficulty mid">中級</span>
+        <p>衣をつけて揚げるだけ。新じゃがは糖度が低いため、焦げずに美しい黄金色に仕上がります。</p>
+        <span class="texture-note">── 衣はサクサク、中はとろり</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="b2b-banner">
+  <div class="container">
+    <span class="section-eyebrow">FIRST TIME</span>
+    <h2>まだ島ポテこをお試しでない方へ</h2>
+    <p>まずは一粒、赤土が育てた味をお試しください。<br>お買い上げいただいた方には、毎月の「壱岐レシピ帖」を合言葉でお届けします。</p>
+    <a href="index.html#products" class="btn btn-earth">商品を見る</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" style="border-color: var(--kogane-soft); color: var(--kogane-soft); background: transparent;">島</span>
+          <span>
+            <div class="brand-name" style="color: var(--ivory);">島ポテこ</div>
+            <div class="brand-sub" style="color: var(--kogane-soft);">SHIMA POTEKO</div>
+          </span>
+        </div>
+        <p>長崎県壱岐市・湯ノ本エリアから、赤土が育てたちいさな黄金をお届けします。</p>
+      </div>
+      <div>
+        <h4>ショップ</h4>
+        <ul>
+          <li><a href="index.html#products">商品一覧</a></li>
+          <li><a href="gift.html">ギフト</a></li>
+          <li><a href="restaurants.html">レストランの方へ</a></li>
+          <li><a href="shipping.html">配送について</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>島ポテこについて</h4>
+        <ul>
+          <li><a href="index.html#story">テロワール</a></li>
+          <li><a href="producers.html">生産者紹介</a></li>
+          <li><a href="recipes.html">壱岐レシピ帖</a></li>
+          <li><a href="index.html#news">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="about.html">会社概要</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 島ポテこ / SHIMA POTEKO</div>
+      <div>長崎県壱岐市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== 合言葉チェック =====
+// SHA-256 hash of the passphrase (stored, not the plaintext)
+// 2026年6月号：あかつちのこがね
+const VALID_HASH = 'e8b072d2aafe60e9b7951e05405ec43387b8056e2bee6713291cf7ae6a435a28';
+
+async function sha256(text) {
+  const buffer = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+document.getElementById('passphraseForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const input = document.getElementById('passphraseInput').value.trim();
+  const errorEl = document.getElementById('passphraseError');
+  errorEl.textContent = '';
+
+  if (!input) {
+    errorEl.textContent = '合言葉をご入力ください。';
+    return;
+  }
+
+  const hash = await sha256(input);
+  if (hash === VALID_HASH) {
+    // Set unlock flag with month-based key so new month invalidates
+    localStorage.setItem('shimapoteko_recipes_unlocked', '2026-06');
+    window.location.href = 'recipes-members.html';
+  } else {
+    errorEl.textContent = '合言葉が違うようです。もう一度お試しください。';
+    document.getElementById('passphraseInput').select();
+  }
+});
+
+// If already unlocked, offer quick jump
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('shimapoteko_recipes_unlocked') === '2026-06') {
+    const box = document.querySelector('.passphrase-box');
+    const helper = box.querySelector('.helper');
+    helper.innerHTML = '前回入力された合言葉が有効です。<br><a href="recipes-members.html" style="color: var(--akatsuchi); text-decoration: underline;">会員ページを開く →</a>';
+  }
+});
+</script>
+
+</body>
+</html>

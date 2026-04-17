@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>壱岐レシピ帖（会員）｜島ポテこ</title>
+<meta name="description" content="島ポテこ購入者限定・壱岐レシピ帖の会員ページ。今月号とバックナンバーをお楽しみください。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://marine923.github.io/shimapoteko-site/recipes-members.html">
+<meta name="theme-color" content="#a4583a">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">島</span>
+      <span>
+        <div class="brand-name">島ポテこ</div>
+        <div class="brand-sub">SHIMA POTEKO</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#products">商品</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="recipes.html">レシピ帖</a>
+      <a href="restaurants.html">レストランの方へ</a>
+      <a href="index.html#news">お知らせ</a>
+    </nav>
+    <a href="#" class="header-cta" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+    <button class="nav-toggle" aria-label="メニューを開く" onclick="document.body.classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-label="モバイルメニュー">
+  <div class="menu-sub">SHOP</div>
+  <a href="index.html#products">商品</a>
+  <a href="recipes.html">壱岐レシピ帖</a>
+  <a href="index.html#news">お知らせ</a>
+  <div class="menu-sub">STORY</div>
+  <a href="index.html#story">テロワール</a>
+  <a href="producers.html">生産者紹介</a>
+  <div class="menu-sub">BUSINESS</div>
+  <a href="restaurants.html">レストランの方へ</a>
+  <div class="menu-sub">ABOUT</div>
+  <a href="about.html">会社概要</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tokutei.html">特定商取引法に基づく表記</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-eyebrow">MEMBERS AREA</span>
+    <h1>壱岐レシピ帖</h1>
+    <p>ご購入ありがとうございます。<br>壱岐の料理人からの「月刊」をお楽しみください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-sm">
+    <div class="members-banner">
+      <span class="icon">鍵</span>
+      <span>合言葉「あかつちのこがね」で認証済みです。</span>
+      <button class="logout" id="logoutBtn">ログアウト</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-sm">
+    <div class="section-head">
+      <span class="section-eyebrow">THIS MONTH</span>
+      <h2 class="section-title">今月号</h2>
+    </div>
+
+    <article class="chef-card">
+      <div class="chef-portrait">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="料理人のシルエット">
+          <defs>
+            <linearGradient id="chefBg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#efe6d0"/>
+              <stop offset="100%" stop-color="#d9be8d"/>
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#chefBg2)"/>
+          <circle cx="100" cy="75" r="32" fill="#7d3d26" opacity="0.85"/>
+          <path d="M 45 200 C 45 145, 75 115, 100 115 C 125 115, 155 145, 155 200 Z" fill="#2a2220" opacity="0.85"/>
+          <rect x="88" y="55" width="24" height="10" fill="#2a2220" opacity="0.5"/>
+        </svg>
+        <span class="ph-label">PORTRAIT 予定</span>
+      </div>
+      <div class="chef-meta">
+        <div class="chef-role">第壱号 ／ 2026年6月</div>
+        <h3>潮騒亭・山田 健一</h3>
+        <div class="chef-store">長崎県壱岐市 郷ノ浦町・居酒屋「潮騒亭」店主</div>
+        <p class="chef-bio">
+          カウンター越しに島の食材を焼き続けて四半世紀。「麦焼酎にいちばん近いじゃがいも」と呼ぶ島ポテこの、いちばんシンプルで、いちばん奥深い食べ方を教わりました。
+        </p>
+        <p style="margin-top: 1.5rem;">
+          <a href="recipe-2026-06-shioze.html" class="btn btn-earth">今月のレシピを読む →</a>
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section-concept">
+  <div class="container-sm">
+    <div class="section-head">
+      <span class="section-eyebrow">BACK ISSUES</span>
+      <h2 class="section-title">バックナンバー</h2>
+      <p class="section-desc">過去号はいつでも読み返していただけます。</p>
+    </div>
+    <div class="backissue-grid">
+      <a href="recipe-2026-06-shioze.html" class="backissue-card">
+        <div class="issue-no">第壱号 ／ 6月</div>
+        <h4>藻塩バター焼き、麦焼酎添え</h4>
+        <div class="chef">潮騒亭・山田健一（居酒屋店主）</div>
+      </a>
+      <div class="backissue-card future">
+        <div class="issue-no">第貳号 ／ 7月</div>
+        <h4>壱岐のカフェ風ガレット</h4>
+        <div class="chef">Coming Soon（カフェオーナー）</div>
+      </div>
+      <div class="backissue-card future">
+        <div class="issue-no">第参号 ／ 8月</div>
+        <h4>漁師のいも煮</h4>
+        <div class="chef">Coming Soon（漁師）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-sm text-center">
+    <p style="color: var(--sumi-soft); font-size: 0.9rem; line-height: 2;">
+      来月号は、壱岐市勝本町のカフェオーナーに登場いただく予定です。<br>
+      毎月15日に更新、ご登録のメールアドレスへ新しい合言葉をお送りします。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" style="border-color: var(--kogane-soft); color: var(--kogane-soft); background: transparent;">島</span>
+          <span>
+            <div class="brand-name" style="color: var(--ivory);">島ポテこ</div>
+            <div class="brand-sub" style="color: var(--kogane-soft);">SHIMA POTEKO</div>
+          </span>
+        </div>
+        <p>長崎県壱岐市・湯ノ本エリアから、赤土が育てたちいさな黄金をお届けします。</p>
+      </div>
+      <div>
+        <h4>ショップ</h4>
+        <ul>
+          <li><a href="index.html#products">商品一覧</a></li>
+          <li><a href="gift.html">ギフト</a></li>
+          <li><a href="restaurants.html">レストランの方へ</a></li>
+          <li><a href="shipping.html">配送について</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>島ポテこについて</h4>
+        <ul>
+          <li><a href="index.html#story">テロワール</a></li>
+          <li><a href="producers.html">生産者紹介</a></li>
+          <li><a href="recipes.html">壱岐レシピ帖</a></li>
+          <li><a href="index.html#news">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="about.html">会社概要</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 島ポテこ / SHIMA POTEKO</div>
+      <div>長崎県壱岐市</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== アクセス制御 =====
+// 未認証でこのページに直接来た人は recipes.html に戻す
+(function() {
+  const unlocked = localStorage.getItem('shimapoteko_recipes_unlocked');
+  if (unlocked !== '2026-06') {
+    window.location.href = 'recipes.html';
+  }
+})();
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  if (confirm('ログアウトしますか？再度合言葉の入力が必要になります。')) {
+    localStorage.removeItem('shimapoteko_recipes_unlocked');
+    window.location.href = 'recipes.html';
+  }
+});
+</script>
+
+</body>
+</html>
