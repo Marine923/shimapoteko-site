@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="スチーム・ハーフ 蒸し半加工">
+  <defs>
+    <linearGradient id="steam-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eceeeb"/>
+      <stop offset="1" stop-color="#c8cec6"/>
+    </linearGradient>
+    <linearGradient id="steam-tray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ece8dc"/>
+      <stop offset="0.5" stop-color="#bcb6a4"/>
+      <stop offset="1" stop-color="#8a8372"/>
+    </linearGradient>
+    <radialGradient id="steam-pot" cx="0.35" cy="0.35" r="0.85">
+      <stop offset="0" stop-color="#fff1bb"/>
+      <stop offset="0.5" stop-color="#f2d488"/>
+      <stop offset="1" stop-color="#c29a54"/>
+    </radialGradient>
+    <radialGradient id="steam-skin" cx="0.3" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#e0b762"/>
+      <stop offset="1" stop-color="#8a5f2a"/>
+    </radialGradient>
+    <filter id="steam-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="steam-blur">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#steam-bg)"/>
+  <!-- steam wisps (large, blurred) -->
+  <g filter="url(#steam-blur)" opacity="0.75">
+    <path d="M 280 150 C 260 110, 300 85, 275 45" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+    <path d="M 400 140 C 375 100, 425 75, 400 30" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+    <path d="M 520 150 C 500 110, 540 85, 520 40" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <!-- secondary steam -->
+  <g filter="url(#steam-blur)" opacity="0.45">
+    <path d="M 330 170 C 345 130, 320 110, 335 80" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 465 180 C 485 140, 455 115, 475 85" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 220 195 C 235 160, 210 140, 220 115" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 580 190 C 595 155, 570 135, 585 110" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <!-- tray shadow -->
+  <ellipse cx="400" cy="458" rx="330" ry="14" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+  <!-- steaming bat/tray -->
+  <rect x="70" y="225" width="660" height="225" rx="12" fill="url(#steam-tray)"/>
+  <rect x="80" y="235" width="640" height="205" rx="8" fill="#d8d3be"/>
+  <rect x="80" y="235" width="640" height="205" rx="8" fill="none" stroke="#8a8272" stroke-width="1.5"/>
+  <!-- tray edge highlight -->
+  <path d="M 80 240 L 720 240" stroke="#f5f0e0" stroke-width="1.5" opacity="0.8"/>
+  <!-- halved potatoes back row -->
+  <g>
+    <g transform="translate(150, 290)">
+      <ellipse cx="3" cy="4" rx="44" ry="26" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="42" ry="24" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="34" ry="16" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(250, 298)">
+      <ellipse cx="3" cy="4" rx="46" ry="28" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="44" ry="26" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="36" ry="18" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(350, 290)">
+      <ellipse cx="3" cy="4" rx="44" ry="26" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="42" ry="24" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="34" ry="16" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(450, 298)">
+      <ellipse cx="3" cy="4" rx="46" ry="28" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="44" ry="26" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="36" ry="18" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(550, 290)">
+      <ellipse cx="3" cy="4" rx="44" ry="26" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="42" ry="24" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="34" ry="16" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(650, 298)">
+      <ellipse cx="3" cy="4" rx="40" ry="24" fill="#000000" opacity="0.2" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="38" ry="22" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-2" rx="30" ry="14" fill="url(#steam-pot)"/>
+    </g>
+  </g>
+  <!-- front row (larger) -->
+  <g>
+    <g transform="translate(180, 380)">
+      <ellipse cx="3" cy="5" rx="50" ry="30" fill="#000000" opacity="0.22" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="48" ry="28" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-3" rx="40" ry="20" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(290, 390)">
+      <ellipse cx="3" cy="5" rx="52" ry="32" fill="#000000" opacity="0.22" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="50" ry="30" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-3" rx="42" ry="22" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(400, 380)">
+      <ellipse cx="3" cy="5" rx="50" ry="30" fill="#000000" opacity="0.22" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="48" ry="28" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-3" rx="40" ry="20" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(510, 390)">
+      <ellipse cx="3" cy="5" rx="52" ry="32" fill="#000000" opacity="0.22" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="50" ry="30" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-3" rx="42" ry="22" fill="url(#steam-pot)"/>
+    </g>
+    <g transform="translate(620, 380)">
+      <ellipse cx="3" cy="5" rx="50" ry="30" fill="#000000" opacity="0.22" filter="url(#steam-shadow)"/>
+      <ellipse cx="0" cy="0" rx="48" ry="28" fill="url(#steam-skin)"/>
+      <ellipse cx="0" cy="-3" rx="40" ry="20" fill="url(#steam-pot)"/>
+    </g>
+  </g>
+  <!-- moisture droplets on cut surface -->
+  <g fill="#ffffff" opacity="0.55">
+    <circle cx="145" cy="288" r="2"/>
+    <circle cx="245" cy="296" r="2.2"/>
+    <circle cx="345" cy="288" r="2"/>
+    <circle cx="445" cy="296" r="2.2"/>
+    <circle cx="545" cy="288" r="2"/>
+    <circle cx="175" cy="376" r="2.5"/>
+    <circle cx="285" cy="388" r="2.5"/>
+    <circle cx="395" cy="378" r="2.5"/>
+    <circle cx="505" cy="388" r="2.5"/>
+    <circle cx="615" cy="378" r="2.5"/>
+  </g>
+  <!-- label -->
+  <g transform="translate(50, 55)">
+    <rect x="0" y="0" width="260" height="82" rx="4" fill="#ffffff" opacity="0.92" stroke="#6b736a" stroke-width="1"/>
+    <text x="18" y="32" font-family="'Shippori Mincho', serif" font-size="15" fill="#5a6258" letter-spacing="5">LINE 參</text>
+    <line x1="18" y1="42" x2="170" y2="42" stroke="#6b736a" stroke-width="0.6"/>
+    <text x="18" y="62" font-family="'Shippori Mincho', serif" font-size="18" fill="#2a2f2a" font-weight="700">STEAM · HALF</text>
+    <text x="18" y="76" font-family="sans-serif" font-size="10" fill="#5a6258">蒸し半加工・時短</text>
+  </g>
+  <!-- watermark -->
+  <text x="740" y="482" text-anchor="end" font-family="sans-serif" font-size="10" fill="#5a6258" opacity="0.55">仮画像 · ILLUSTRATION</text>
+</svg>

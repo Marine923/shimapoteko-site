@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="壱岐のひとくち新じゃがパック（仮画像）">
+  <defs>
+    <radialGradient id="bgPack" cx="50%" cy="45%" r="78%">
+      <stop offset="0%" stop-color="#f8efd6"/>
+      <stop offset="60%" stop-color="#ecdfbe"/>
+      <stop offset="100%" stop-color="#cdb68a"/>
+    </radialGradient>
+    <radialGradient id="taterPack" cx="32%" cy="26%" r="78%">
+      <stop offset="0%" stop-color="#f4d99b"/>
+      <stop offset="35%" stop-color="#d7ae6b"/>
+      <stop offset="82%" stop-color="#9d7a3b"/>
+      <stop offset="100%" stop-color="#6e5020"/>
+    </radialGradient>
+    <radialGradient id="taterHi" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbe9bd" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#fbe9bd" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="fiber" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.4" fill="#8b6a3a" opacity="0.12"/>
+      <circle cx="4" cy="3" r="0.3" fill="#8b6a3a" opacity="0.08"/>
+    </pattern>
+    <filter id="softshd" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgPack)"/>
+  <rect width="800" height="600" fill="url(#fiber)"/>
+
+  <!-- paper bag edge (subtle curve top) -->
+  <path d="M 0 70 Q 200 40 400 55 T 800 65 L 800 95 Q 600 80 400 85 T 0 100 Z" fill="#b69466" opacity="0.14"/>
+
+  <!-- grouped shadows -->
+  <g opacity="0.45">
+    <ellipse cx="180" cy="280" rx="80" ry="16" fill="#5b3c1e" filter="url(#softshd)"/>
+    <ellipse cx="400" cy="250" rx="100" ry="18" fill="#5b3c1e" filter="url(#softshd)"/>
+    <ellipse cx="620" cy="290" rx="85" ry="16" fill="#5b3c1e" filter="url(#softshd)"/>
+    <ellipse cx="260" cy="455" rx="95" ry="18" fill="#5b3c1e" filter="url(#softshd)"/>
+    <ellipse cx="430" cy="475" rx="120" ry="22" fill="#5b3c1e" filter="url(#softshd)"/>
+    <ellipse cx="600" cy="460" rx="95" ry="18" fill="#5b3c1e" filter="url(#softshd)"/>
+  </g>
+
+  <!-- back row potatoes -->
+  <g transform="translate(180 250) rotate(-12)">
+    <ellipse rx="72" ry="56" fill="url(#taterPack)"/>
+    <ellipse rx="38" ry="24" cx="-18" cy="-20" fill="url(#taterHi)"/>
+    <circle cx="10" cy="-8" r="2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-22" cy="10" r="1.8" fill="#6b4422" opacity="0.6"/>
+    <circle cx="25" cy="18" r="1.4" fill="#6b4422" opacity="0.55"/>
+    <circle cx="-5" cy="-14" r="1.2" fill="#6b4422" opacity="0.4"/>
+  </g>
+  <g transform="translate(400 220) rotate(6)">
+    <ellipse rx="88" ry="66" fill="url(#taterPack)"/>
+    <ellipse rx="44" ry="28" cx="-22" cy="-24" fill="url(#taterHi)"/>
+    <circle cx="8" cy="-12" r="2.2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-14" cy="20" r="2" fill="#6b4422" opacity="0.6"/>
+    <circle cx="30" cy="8" r="1.6" fill="#6b4422" opacity="0.5"/>
+  </g>
+  <g transform="translate(620 260) rotate(16)">
+    <ellipse rx="74" ry="58" fill="url(#taterPack)"/>
+    <ellipse rx="38" ry="24" cx="-18" cy="-22" fill="url(#taterHi)"/>
+    <circle cx="12" cy="10" r="2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-20" cy="-6" r="1.8" fill="#6b4422" opacity="0.55"/>
+  </g>
+
+  <!-- front row potatoes -->
+  <g transform="translate(260 430) rotate(10)">
+    <ellipse rx="80" ry="62" fill="url(#taterPack)"/>
+    <ellipse rx="40" ry="26" cx="-20" cy="-24" fill="url(#taterHi)"/>
+    <circle cx="18" cy="-6" r="2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-14" cy="22" r="2" fill="#6b4422" opacity="0.6"/>
+    <circle cx="28" cy="20" r="1.5" fill="#6b4422" opacity="0.5"/>
+  </g>
+  <g transform="translate(430 450) rotate(-8)">
+    <ellipse rx="102" ry="78" fill="url(#taterPack)"/>
+    <ellipse rx="54" ry="34" cx="-26" cy="-30" fill="url(#taterHi)"/>
+    <circle cx="20" cy="-12" r="2.4" fill="#6b4422" opacity="0.75"/>
+    <circle cx="-22" cy="18" r="2" fill="#6b4422" opacity="0.6"/>
+    <circle cx="32" cy="30" r="1.8" fill="#6b4422" opacity="0.5"/>
+    <circle cx="-8" cy="-20" r="1.5" fill="#6b4422" opacity="0.45"/>
+  </g>
+  <g transform="translate(600 435) rotate(22)">
+    <ellipse rx="84" ry="64" fill="url(#taterPack)"/>
+    <ellipse rx="42" ry="27" cx="-20" cy="-26" fill="url(#taterHi)"/>
+    <circle cx="14" cy="-8" r="2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-22" cy="12" r="2" fill="#6b4422" opacity="0.6"/>
+  </g>
+
+  <!-- 仮 mark -->
+  <text x="44" y="566" font-family="'Shippori Mincho', serif" font-size="13" fill="#5b3c1e" opacity="0.45" letter-spacing="4">仮画像 · ILLUSTRATION</text>
+</svg>

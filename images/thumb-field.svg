@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="壱岐の赤土畑（仮画像）">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8d9b4"/>
+      <stop offset="100%" stop-color="#d0a873"/>
+    </linearGradient>
+    <linearGradient id="soil" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8e4a2c"/>
+      <stop offset="60%" stop-color="#6a3018"/>
+      <stop offset="100%" stop-color="#3f1a0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky / horizon -->
+  <rect width="400" height="140" fill="url(#sky)"/>
+  <!-- distant hill -->
+  <path d="M 0 140 Q 100 110 200 118 Q 300 124 400 100 L 400 140 Z" fill="#8e7a4a" opacity="0.55"/>
+  <path d="M 0 138 Q 120 122 250 126 Q 340 130 400 120 L 400 140 Z" fill="#6a5a30" opacity="0.4"/>
+
+  <!-- field rows (red earth) -->
+  <rect y="140" width="400" height="260" fill="url(#soil)"/>
+  <g opacity="0.55" stroke="#3f1a0b" stroke-width="1.5" fill="none">
+    <path d="M -20 180 Q 100 178 200 186 T 420 188"/>
+    <path d="M -20 220 Q 100 218 200 228 T 420 226"/>
+    <path d="M -20 270 Q 100 268 200 280 T 420 276"/>
+    <path d="M -20 330 Q 100 328 200 344 T 420 336"/>
+  </g>
+  <g opacity="0.3" fill="#a45a30">
+    <circle cx="60" cy="185" r="3"/>
+    <circle cx="130" cy="225" r="2.5"/>
+    <circle cx="220" cy="260" r="3"/>
+    <circle cx="300" cy="300" r="2.8"/>
+    <circle cx="360" cy="215" r="2.4"/>
+    <circle cx="80" cy="310" r="2.6"/>
+    <circle cx="180" cy="355" r="3"/>
+  </g>
+
+  <!-- potato plants (green tops rising from soil) -->
+  <g transform="translate(90 200)">
+    <g fill="#5d7a36">
+      <ellipse rx="10" ry="6" cx="-12" cy="-8" transform="rotate(-30 -12 -8)"/>
+      <ellipse rx="10" ry="6" cx="0" cy="-14" transform="rotate(0 0 -14)"/>
+      <ellipse rx="10" ry="6" cx="12" cy="-8" transform="rotate(30 12 -8)"/>
+      <ellipse rx="8" ry="5" cx="-6" cy="-2" transform="rotate(-10 -6 -2)"/>
+      <ellipse rx="8" ry="5" cx="6" cy="-2" transform="rotate(10 6 -2)"/>
+    </g>
+    <g fill="#7a9a4a" opacity="0.7">
+      <ellipse rx="5" ry="2.5" cx="0" cy="-14"/>
+    </g>
+  </g>
+  <g transform="translate(180 245)">
+    <g fill="#5d7a36">
+      <ellipse rx="12" ry="7" cx="-14" cy="-10" transform="rotate(-30 -14 -10)"/>
+      <ellipse rx="12" ry="7" cx="0" cy="-18" transform="rotate(0 0 -18)"/>
+      <ellipse rx="12" ry="7" cx="14" cy="-10" transform="rotate(30 14 -10)"/>
+      <ellipse rx="10" ry="6" cx="-8" cy="-2" transform="rotate(-10 -8 -2)"/>
+      <ellipse rx="10" ry="6" cx="8" cy="-2" transform="rotate(10 8 -2)"/>
+    </g>
+  </g>
+  <g transform="translate(290 285)">
+    <g fill="#5d7a36">
+      <ellipse rx="14" ry="8" cx="-16" cy="-12" transform="rotate(-30 -16 -12)"/>
+      <ellipse rx="14" ry="8" cx="0" cy="-22" transform="rotate(0 0 -22)"/>
+      <ellipse rx="14" ry="8" cx="16" cy="-12" transform="rotate(30 16 -12)"/>
+      <ellipse rx="12" ry="7" cx="-10" cy="-2" transform="rotate(-10 -10 -2)"/>
+      <ellipse rx="12" ry="7" cx="10" cy="-2" transform="rotate(10 10 -2)"/>
+    </g>
+  </g>
+  <g transform="translate(70 330)">
+    <g fill="#5d7a36">
+      <ellipse rx="16" ry="9" cx="-18" cy="-14" transform="rotate(-30 -18 -14)"/>
+      <ellipse rx="16" ry="9" cx="0" cy="-26" transform="rotate(0 0 -26)"/>
+      <ellipse rx="16" ry="9" cx="18" cy="-14" transform="rotate(30 18 -14)"/>
+      <ellipse rx="14" ry="8" cx="-12" cy="-4" transform="rotate(-10 -12 -4)"/>
+      <ellipse rx="14" ry="8" cx="12" cy="-4" transform="rotate(10 12 -4)"/>
+    </g>
+  </g>
+</svg>

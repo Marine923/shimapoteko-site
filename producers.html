@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生産者紹介｜島ポテこ</title>
+<meta name="description" content="島ポテこの小粒じゃがいもを育てている壱岐島の生産者たち。湯ノ本エリアの赤土畑と、その営みを紹介します。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">島</span>
+      <span>
+        <div class="brand-name">島ポテこ</div>
+        <div class="brand-sub">SHIMA POTEKO</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#products">商品</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="index.html#recipes">レシピ</a>
+      <a href="restaurants.html">レストランの方へ</a>
+      <a href="index.html#news">お知らせ</a>
+    </nav>
+    <a href="#" class="header-cta" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+    <button class="nav-toggle" aria-label="メニューを開く" onclick="document.body.classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-label="モバイルメニュー">
+  <div class="menu-sub">SHOP</div>
+  <a href="index.html#products">商品</a>
+  <a href="index.html#recipes">レシピ</a>
+  <a href="index.html#news">お知らせ</a>
+  <div class="menu-sub">STORY</div>
+  <a href="index.html#story">テロワール</a>
+  <a href="producers.html">生産者紹介</a>
+  <div class="menu-sub">BUSINESS</div>
+  <a href="restaurants.html">レストランの方へ</a>
+  <div class="menu-sub">ABOUT</div>
+  <a href="about.html">会社概要</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tokutei.html">特定商取引法に基づく表記</a>
+  <a href="#" class="cart" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-eyebrow">PRODUCERS</span>
+    <h1>畑に立つ人たち</h1>
+    <p>赤土のちいさな黄金は、島の農家の手から生まれます。朝露に濡れた畝を歩き、芋の育ちを見つめてきた人たちの、日々の営みを紹介します。</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="producer-grid">
+
+      <article class="producer-card">
+        <div class="p-photo">
+          <span class="ph-label">湯ノ本の赤土畑（ドローン空撮）</span>
+        </div>
+        <div class="p-info">
+          <div class="p-role">PRODUCER 壹</div>
+          <h2>中村 甚平 さん</h2>
+          <div class="p-area">中村農園・湯ノ本エリア</div>
+          <p>祖父の代から3代にわたり、湯ノ本の赤土畑でじゃがいもを育ててきた中村さん。玄武岩由来のこの土は、粘土質で扱いが難しい反面、じゃがいもに強い旨味をもたらすのだと言います。</p>
+          <p>「小粒は昔から捨てるのがもったいなくて、自分たちで食べていた。一番美味いのは、じつはこの小さいやつなんだよ」。中村さんの言葉が、島ポテこの出発点になりました。</p>
+          <blockquote class="p-quote">土を見て、風を読んで。毎年ちがう気候に、畑のほうが合わせてくれる。</blockquote>
+        </div>
+      </article>
+
+      <article class="producer-card reverse">
+        <div class="p-photo farm">
+          <span class="ph-label">春、芽吹きの畝</span>
+        </div>
+        <div class="p-info">
+          <div class="p-role">PRODUCER 貳</div>
+          <h2>松永 八重 さん</h2>
+          <div class="p-area">松永ファーム・芦辺エリア</div>
+          <p>壱岐牛の畜産と野菜の有畜複合経営を営む松永さん。自家製の堆肥を使い、微生物豊かな土づくりにこだわってきました。その畑から掘りおこされる新じゃがは、ナッツのような濃厚なコクを含みます。</p>
+          <p>「牛と畑と人が、島の中でぐるぐる回る。そういう農業を、壱岐から発信できるのがうれしい」。循環を大切にする松永さんの畑は、島ポテこのテロワールの核をなしています。</p>
+          <blockquote class="p-quote">小さな島だからこそ、見える循環がある。</blockquote>
+        </div>
+      </article>
+
+      <article class="producer-card">
+        <div class="p-photo harvest">
+          <span class="ph-label">朝6時、収穫の時間</span>
+        </div>
+        <div class="p-info">
+          <div class="p-role">PRODUCER 參</div>
+          <h2>吉田 和夫 さん</h2>
+          <div class="p-area">吉田農園・勝本エリア</div>
+          <p>勝本の海沿いに畑を持つ吉田さん。潮風が運ぶミネラルを、天然の肥料として味方にしてきました。朝掘りの一番鮮度にこだわり、収穫した日のうちに出荷場へ。</p>
+          <p>「掘ったその日に食べるのがやっぱり一番。けどそれを島の外の人にも届けたい、というのが今回の面白いところだね」。島ポテこの「超鮮度」モデルを、現場で支える生産者のひとりです。</p>
+          <blockquote class="p-quote">鮮度は、時間との勝負。でも、妥協しない勝負。</blockquote>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-story">
+  <div class="container-sm text-center">
+    <span class="section-eyebrow">OUR COMMITMENT</span>
+    <h2 class="section-title">生産者の仕事に、正当な対価を</h2>
+    <p style="color: rgba(255,255,255,0.85); margin: 0 0 1rem;">これまで「規格外」として安値で取引されてきた小粒のじゃがいもに、新しい価値を。島ポテこは、生産者の皆さまから適正な価格で仕入れ、そのストーリーとともに島の外へお届けすることで、島の農業の持続可能性に貢献します。</p>
+    <p style="color: rgba(255,255,255,0.85); margin: 0 0 2rem;">ちいさな黄金が、島の畑と食卓をつなぐ。わたしたちの願いです。</p>
+    <a href="restaurants.html" class="btn btn-outline">レストランの方へ</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" style="border-color: var(--kogane-soft); color: var(--kogane-soft); background: transparent;">島</span>
+          <span>
+            <div class="brand-name" style="color: var(--ivory);">島ポテこ</div>
+            <div class="brand-sub" style="color: var(--kogane-soft);">SHIMA POTEKO</div>
+          </span>
+        </div>
+        <p>長崎県壱岐市・湯ノ本エリアから、赤土が育てたちいさな黄金をお届けします。</p>
+      </div>
+      <div>
+        <h4>ショップ</h4>
+        <ul>
+          <li><a href="index.html#products">商品一覧</a></li>
+          <li><a href="gift.html">ギフト</a></li>
+          <li><a href="restaurants.html">レストランの方へ</a></li>
+          <li><a href="shipping.html">配送について</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>島ポテこについて</h4>
+        <ul>
+          <li><a href="index.html#story">テロワール</a></li>
+          <li><a href="producers.html">生産者紹介</a></li>
+          <li><a href="index.html#recipes">レシピ</a></li>
+          <li><a href="index.html#news">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="about.html">会社概要</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 島ポテこ / SHIMA POTEKO</div>
+      <div>長崎県壱岐市</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

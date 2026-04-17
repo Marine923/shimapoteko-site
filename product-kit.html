@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おつまみポテト・キット｜島ポテこ</title>
+<meta name="description" content="新じゃが300gに、壱岐の藻塩とオリジナルハーブをセット。お酒のそばに、島の夜を。おつまみポテト・キット ¥2,200。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">島</span>
+      <span>
+        <div class="brand-name">島ポテこ</div>
+        <div class="brand-sub">SHIMA POTEKO</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#products">商品</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="index.html#recipes">レシピ</a>
+      <a href="restaurants.html">レストランの方へ</a>
+      <a href="index.html#news">お知らせ</a>
+    </nav>
+    <a href="#" class="header-cta" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+    <button class="nav-toggle" aria-label="メニューを開く" onclick="document.body.classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-label="モバイルメニュー">
+  <div class="menu-sub">SHOP</div>
+  <a href="index.html#products">商品</a>
+  <a href="index.html#recipes">レシピ</a>
+  <a href="index.html#news">お知らせ</a>
+  <div class="menu-sub">STORY</div>
+  <a href="index.html#story">テロワール</a>
+  <a href="producers.html">生産者紹介</a>
+  <div class="menu-sub">BUSINESS</div>
+  <a href="restaurants.html">レストランの方へ</a>
+  <div class="menu-sub">ABOUT</div>
+  <a href="about.html">会社概要</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tokutei.html">特定商取引法に基づく表記</a>
+  <a href="#" class="cart" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+</div>
+
+<main>
+
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="index.html">ホーム</a>
+    <span class="sep">／</span>
+    <a href="index.html#products">商品一覧</a>
+    <span class="sep">／</span>
+    <span>おつまみポテト・キット</span>
+  </div>
+</nav>
+
+<section class="product-detail">
+  <div class="container">
+    <div class="layout">
+
+      <div class="gallery">
+        <div class="gallery-main">
+          <img src="images/product-kit.svg" alt="おつまみポテト・キット メイン画像">
+          <span class="ph-label">MAIN PHOTO — キット全体</span>
+        </div>
+        <div class="gallery-thumbs">
+          <div class="gallery-thumb active"><img src="images/product-kit.svg" alt="キット全体"></div>
+          <div class="gallery-thumb"><img src="images/thumb-single.svg" alt="じゃがいも一粒"></div>
+          <div class="gallery-thumb"><img src="images/thumb-cooked.svg" alt="調理例"></div>
+          <div class="gallery-thumb"><img src="images/thumb-cut.svg" alt="断面"></div>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <div class="product-tag">ご自宅で楽しむ</div>
+        <h1>おつまみポテト・<br>キット</h1>
+        <p class="lede">新じゃが300gに、壱岐の藻塩とオリジナルハーブを合わせた、ご自宅で楽しむおつまみキット。お酒のそばに、島の夜を。</p>
+
+        <div class="price-block">
+          <div class="price">¥2,200</div>
+          <div class="unit">／セット（税込・送料別）</div>
+        </div>
+
+        <ul class="spec-list">
+          <li><span class="label">内容</span><span>新じゃが 300g ／ 壱岐藻塩 20g ／ オリジナルハーブミックス 10g</span></li>
+          <li><span class="label">産地</span><span>長崎県壱岐市 湯ノ本エリア</span></li>
+          <li><span class="label">品種</span><span>ニシユタカ系 小粒</span></li>
+          <li><span class="label">ハーブ</span><span>ローズマリー・タイム・オレガノのブレンド</span></li>
+          <li><span class="label">保存</span><span>じゃがいもは冷暗所で1週間（藻塩・ハーブは常温1ヶ月）</span></li>
+          <li><span class="label">発送</span><span>ご注文から3〜5営業日以内</span></li>
+        </ul>
+
+        <div class="qty-row">
+          <label for="qty">数量</label>
+          <input type="number" id="qty" class="qty-input" value="1" min="1" max="10">
+          <span style="font-size: 0.8rem; color: var(--sumi-soft);">※ 10点まで</span>
+        </div>
+
+        <div class="buy-actions">
+          <button class="btn btn-dark" onclick="alert('試作版ではカート機能は未実装です。');">カートに入れる</button>
+          <button class="btn btn-earth" onclick="alert('試作版では購入機能は未実装です。');">今すぐ購入</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="subsec">
+  <div class="container-sm">
+    <h2>島の夜を、食卓に。</h2>
+    <p style="text-align: center; color: var(--sumi-soft); margin: 0 0 2rem;">
+      壱岐の海水からつくられる藻塩のミネラル、<br>
+      島の香草をブレンドしたハーブの香り、<br>
+      そして赤土が育てたちいさな黄金。<br>
+      3つの素材を一つのキットにまとめ、はじめての方でもすぐに島の味を楽しんでいただけるように。
+    </p>
+    <div class="text-center">
+      <a href="index.html#story" class="btn btn-earth">テロワールの物語を読む</a>
+    </div>
+  </div>
+</section>
+
+<section id="recipes">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">RECIPES</span>
+      <h2 class="section-title">キットの楽しみ方</h2>
+    </div>
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <span class="time">調理時間 8分</span>
+        <h3>藻塩のシンプル蒸し</h3>
+        <p>皮ごと8分蒸して、藻塩をひとつまみ。素材の味がそのまま口に広がる、いちばんシンプルな食べ方。</p>
+      </div>
+      <div class="recipe-card">
+        <span class="time">調理時間 15分</span>
+        <h3>ハーブとオリーブオイル焼き</h3>
+        <p>半割りにしてハーブをまぶし、200℃で15分。赤ワインに合わせたい、地中海風のおつまみに。</p>
+      </div>
+      <div class="recipe-card">
+        <span class="time">調理時間 20分</span>
+        <h3>白ワインのアヒージョ</h3>
+        <p>ニンニクとハーブでコトコト煮込むだけ。残ったオイルにバゲットを浸して、もう一杯いかがですか。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="b2b-banner">
+  <div class="container">
+    <span class="section-eyebrow">FOR RESTAURANTS</span>
+    <h2>業務用のご用命は、こちらから</h2>
+    <p>まとまった数量、業務用ロット、継続的な仕入れをご検討の方は、専用ページよりお問い合わせください。</p>
+    <a href="restaurants.html" class="btn btn-earth">レストラン向けページへ</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" style="border-color: var(--kogane-soft); color: var(--kogane-soft); background: transparent;">島</span>
+          <span>
+            <div class="brand-name" style="color: var(--ivory);">島ポテこ</div>
+            <div class="brand-sub" style="color: var(--kogane-soft);">SHIMA POTEKO</div>
+          </span>
+        </div>
+        <p>長崎県壱岐市・湯ノ本エリアから、赤土が育てたちいさな黄金をお届けします。</p>
+      </div>
+      <div>
+        <h4>ショップ</h4>
+        <ul>
+          <li><a href="index.html#products">商品一覧</a></li>
+          <li><a href="gift.html">ギフト</a></li>
+          <li><a href="restaurants.html">レストランの方へ</a></li>
+          <li><a href="shipping.html">配送について</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>島ポテこについて</h4>
+        <ul>
+          <li><a href="index.html#story">テロワール</a></li>
+          <li><a href="producers.html">生産者紹介</a></li>
+          <li><a href="index.html#recipes">レシピ</a></li>
+          <li><a href="index.html#news">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="about.html">会社概要</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 島ポテこ / SHIMA POTEKO</div>
+      <div>長崎県壱岐市</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

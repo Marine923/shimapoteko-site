@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="ザ・ベビーゴールド 洗浄済み業務用">
+  <defs>
+    <linearGradient id="baby-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ebd5"/>
+      <stop offset="1" stop-color="#e6d7b9"/>
+    </linearGradient>
+    <linearGradient id="baby-tray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8e2d3"/>
+      <stop offset="0.5" stop-color="#c9c3b2"/>
+      <stop offset="1" stop-color="#8f8775"/>
+    </linearGradient>
+    <radialGradient id="baby-pot" cx="0.33" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#f8dd97"/>
+      <stop offset="0.6" stop-color="#d6a857"/>
+      <stop offset="1" stop-color="#8a6328"/>
+    </radialGradient>
+    <filter id="baby-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <pattern id="linen-b" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <path d="M 0 3 L 6 3" stroke="#8a7655" stroke-width="0.35" opacity="0.25"/>
+      <path d="M 3 0 L 3 6" stroke="#8a7655" stroke-width="0.35" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#baby-bg)"/>
+  <rect width="800" height="500" fill="url(#linen-b)"/>
+  <!-- tray shadow -->
+  <ellipse cx="400" cy="455" rx="340" ry="14" fill="#000000" opacity="0.18" filter="url(#baby-shadow)"/>
+  <!-- gastronorm tray -->
+  <rect x="70" y="195" width="660" height="250" rx="12" fill="url(#baby-tray)"/>
+  <rect x="80" y="205" width="640" height="230" rx="8" fill="#d4ceba"/>
+  <rect x="80" y="205" width="640" height="230" rx="8" fill="none" stroke="#8a8272" stroke-width="1.5"/>
+  <!-- tray edge highlight -->
+  <path d="M 80 210 L 720 210" stroke="#f5efde" stroke-width="1.5" opacity="0.7"/>
+  <!-- potatoes (back row) -->
+  <g>
+    <ellipse cx="140" cy="250" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="200" cy="245" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="262" cy="252" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="322" cy="245" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="384" cy="252" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="444" cy="245" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="506" cy="252" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="566" cy="245" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="628" cy="252" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="686" cy="248" rx="28" ry="20" fill="url(#baby-pot)"/>
+  </g>
+  <!-- middle row -->
+  <g>
+    <ellipse cx="110" cy="302" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="172" cy="310" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="234" cy="302" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="296" cy="310" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="358" cy="302" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="420" cy="310" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="482" cy="302" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="544" cy="310" rx="34" ry="26" fill="url(#baby-pot)"/>
+    <ellipse cx="606" cy="302" rx="32" ry="24" fill="url(#baby-pot)"/>
+    <ellipse cx="668" cy="308" rx="30" ry="22" fill="url(#baby-pot)"/>
+  </g>
+  <!-- front row (larger) -->
+  <g>
+    <ellipse cx="140" cy="370" rx="36" ry="28" fill="url(#baby-pot)"/>
+    <ellipse cx="208" cy="378" rx="38" ry="30" fill="url(#baby-pot)"/>
+    <ellipse cx="278" cy="370" rx="36" ry="28" fill="url(#baby-pot)"/>
+    <ellipse cx="346" cy="378" rx="38" ry="30" fill="url(#baby-pot)"/>
+    <ellipse cx="416" cy="370" rx="36" ry="28" fill="url(#baby-pot)"/>
+    <ellipse cx="484" cy="378" rx="38" ry="30" fill="url(#baby-pot)"/>
+    <ellipse cx="554" cy="370" rx="36" ry="28" fill="url(#baby-pot)"/>
+    <ellipse cx="622" cy="378" rx="38" ry="30" fill="url(#baby-pot)"/>
+    <ellipse cx="684" cy="372" rx="30" ry="22" fill="url(#baby-pot)"/>
+  </g>
+  <!-- shine dots -->
+  <g fill="#ffffff" opacity="0.35">
+    <circle cx="130" cy="244" r="2.5"/>
+    <circle cx="254" cy="246" r="2.5"/>
+    <circle cx="376" cy="246" r="2.5"/>
+    <circle cx="498" cy="246" r="2.5"/>
+    <circle cx="620" cy="246" r="2.5"/>
+    <circle cx="198" cy="370" r="3"/>
+    <circle cx="336" cy="370" r="3"/>
+    <circle cx="474" cy="370" r="3"/>
+    <circle cx="612" cy="370" r="3"/>
+  </g>
+  <!-- label -->
+  <g transform="translate(50, 55)">
+    <rect x="0" y="0" width="260" height="82" rx="4" fill="#ffffff" opacity="0.92" stroke="#b5853a" stroke-width="1"/>
+    <text x="18" y="32" font-family="'Shippori Mincho', serif" font-size="15" fill="#8a6328" letter-spacing="5">LINE 壹</text>
+    <line x1="18" y1="42" x2="170" y2="42" stroke="#b5853a" stroke-width="0.6"/>
+    <text x="18" y="62" font-family="'Shippori Mincho', serif" font-size="18" fill="#3a2c16" font-weight="700">BABY GOLD</text>
+    <text x="18" y="76" font-family="sans-serif" font-size="10" fill="#8a6328">洗浄済み・即調理可能</text>
+  </g>
+  <!-- watermark -->
+  <text x="740" y="482" text-anchor="end" font-family="sans-serif" font-size="10" fill="#8a7655" opacity="0.55">仮画像 · ILLUSTRATION</text>
+</svg>

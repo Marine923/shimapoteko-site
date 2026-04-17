@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# ローカル開発用サーバー（公開不要）
+serve.py
+
+# エディタ系
+.vscode/
+.idea/
+*.swp

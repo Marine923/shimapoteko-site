@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="おつまみポテト・キット（仮画像）">
+  <defs>
+    <linearGradient id="bgKit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e5a3a"/>
+      <stop offset="50%" stop-color="#6d4126"/>
+      <stop offset="100%" stop-color="#4a2a18"/>
+    </linearGradient>
+    <radialGradient id="taterKit" cx="32%" cy="26%" r="78%">
+      <stop offset="0%" stop-color="#f4d99b"/>
+      <stop offset="35%" stop-color="#d7ae6b"/>
+      <stop offset="82%" stop-color="#9d7a3b"/>
+      <stop offset="100%" stop-color="#6e5020"/>
+    </radialGradient>
+    <radialGradient id="taterHi2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbe9bd" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#fbe9bd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="salt" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e9e2d4"/>
+      <stop offset="100%" stop-color="#bfb59d"/>
+    </radialGradient>
+    <filter id="softshd2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- wood grain background -->
+  <rect width="800" height="600" fill="url(#bgKit)"/>
+  <g opacity="0.18" stroke="#3d2413" stroke-width="1.2">
+    <path d="M 0 50 Q 200 54 400 48 T 800 52" fill="none"/>
+    <path d="M 0 130 Q 200 136 400 128 T 800 132" fill="none"/>
+    <path d="M 0 220 Q 200 215 400 226 T 800 220" fill="none"/>
+    <path d="M 0 310 Q 200 318 400 306 T 800 312" fill="none"/>
+    <path d="M 0 400 Q 200 395 400 408 T 800 400" fill="none"/>
+    <path d="M 0 490 Q 200 496 400 488 T 800 492" fill="none"/>
+    <path d="M 0 565 Q 200 560 400 570 T 800 565" fill="none"/>
+  </g>
+  <g opacity="0.12" stroke="#2a1708" stroke-width="0.6">
+    <path d="M 120 0 L 128 600" fill="none"/>
+    <path d="M 340 0 L 346 600" fill="none"/>
+    <path d="M 540 0 L 534 600" fill="none"/>
+    <path d="M 700 0 L 708 600" fill="none"/>
+  </g>
+
+  <!-- shadows -->
+  <g opacity="0.5">
+    <ellipse cx="240" cy="380" rx="150" ry="28" fill="#1a0e05" filter="url(#softshd2)"/>
+    <ellipse cx="600" cy="240" rx="85" ry="18" fill="#1a0e05" filter="url(#softshd2)"/>
+    <ellipse cx="600" cy="440" rx="95" ry="18" fill="#1a0e05" filter="url(#softshd2)"/>
+  </g>
+
+  <!-- potato cluster (left) -->
+  <g transform="translate(170 340) rotate(-10)">
+    <ellipse rx="78" ry="60" fill="url(#taterKit)"/>
+    <ellipse rx="40" ry="26" cx="-18" cy="-22" fill="url(#taterHi2)"/>
+    <circle cx="12" cy="-6" r="2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-20" cy="12" r="2" fill="#6b4422" opacity="0.6"/>
+  </g>
+  <g transform="translate(310 360) rotate(12)">
+    <ellipse rx="84" ry="66" fill="url(#taterKit)"/>
+    <ellipse rx="42" ry="28" cx="-20" cy="-24" fill="url(#taterHi2)"/>
+    <circle cx="14" cy="-10" r="2.2" fill="#6b4422" opacity="0.7"/>
+    <circle cx="-16" cy="18" r="2" fill="#6b4422" opacity="0.6"/>
+    <circle cx="28" cy="20" r="1.5" fill="#6b4422" opacity="0.5"/>
+  </g>
+  <g transform="translate(220 230) rotate(-22)">
+    <ellipse rx="62" ry="48" fill="url(#taterKit)"/>
+    <ellipse rx="30" ry="20" cx="-14" cy="-16" fill="url(#taterHi2)"/>
+    <circle cx="10" cy="6" r="1.8" fill="#6b4422" opacity="0.65"/>
+  </g>
+
+  <!-- salt dish (top right) -->
+  <g transform="translate(600 220)">
+    <!-- dish shadow -->
+    <ellipse rx="92" ry="22" cy="8" fill="#1a0e05" opacity="0.4"/>
+    <!-- dish rim -->
+    <ellipse rx="90" ry="18" fill="#5b3b24"/>
+    <ellipse rx="84" ry="14" fill="#3a2614"/>
+    <!-- salt pile -->
+    <path d="M -58 0 Q -30 -14 0 -18 Q 32 -12 58 0 Q 30 8 0 10 Q -30 8 -58 0 Z" fill="url(#salt)"/>
+    <!-- salt crystals -->
+    <g fill="#ffffff">
+      <circle cx="-30" cy="-4" r="1.5"/>
+      <circle cx="-10" cy="-10" r="1.8"/>
+      <circle cx="12" cy="-8" r="1.6"/>
+      <circle cx="30" cy="-2" r="1.4"/>
+      <circle cx="-42" cy="2" r="1.2"/>
+      <circle cx="40" cy="4" r="1.2"/>
+      <circle cx="0" cy="-14" r="1.4"/>
+      <circle cx="-18" cy="2" r="1"/>
+      <circle cx="20" cy="2" r="1"/>
+    </g>
+  </g>
+  <text x="553" y="292" font-family="'Shippori Mincho', serif" font-size="12" fill="#f0e6c8" opacity="0.65" letter-spacing="3">壱岐 藻塩</text>
+
+  <!-- herb sprig (bottom right) -->
+  <g transform="translate(600 440) rotate(-18)">
+    <!-- stem -->
+    <path d="M -80 0 Q -40 -4 0 -8 Q 40 -12 80 -20" stroke="#5b6b36" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- leaves -->
+    <g fill="#7a8b4a">
+      <ellipse rx="7" ry="3" cx="-66" cy="-6" transform="rotate(30 -66 -6)"/>
+      <ellipse rx="7" ry="3" cx="-58" cy="4" transform="rotate(-30 -58 4)"/>
+      <ellipse rx="8" ry="3.5" cx="-38" cy="-10" transform="rotate(25 -38 -10)"/>
+      <ellipse rx="8" ry="3.5" cx="-32" cy="2" transform="rotate(-25 -32 2)"/>
+      <ellipse rx="9" ry="4" cx="-12" cy="-14" transform="rotate(22 -12 -14)"/>
+      <ellipse rx="9" ry="4" cx="-6" cy="0" transform="rotate(-22 -6 0)"/>
+      <ellipse rx="10" ry="4.5" cx="20" cy="-18" transform="rotate(20 20 -18)"/>
+      <ellipse rx="10" ry="4.5" cx="26" cy="-4" transform="rotate(-20 26 -4)"/>
+      <ellipse rx="11" ry="5" cx="52" cy="-22" transform="rotate(15 52 -22)"/>
+      <ellipse rx="11" ry="5" cx="58" cy="-8" transform="rotate(-15 58 -8)"/>
+    </g>
+    <!-- leaf highlights -->
+    <g fill="#a4b76a" opacity="0.5">
+      <ellipse rx="4" ry="1.5" cx="-38" cy="-11" transform="rotate(25 -38 -11)"/>
+      <ellipse rx="5" ry="1.8" cx="-12" cy="-15" transform="rotate(22 -12 -15)"/>
+      <ellipse rx="5" ry="2" cx="20" cy="-19" transform="rotate(20 20 -19)"/>
+      <ellipse rx="6" ry="2.2" cx="52" cy="-23" transform="rotate(15 52 -23)"/>
+    </g>
+  </g>
+  <text x="540" y="498" font-family="'Shippori Mincho', serif" font-size="12" fill="#f0e6c8" opacity="0.65" letter-spacing="3">オリジナルハーブ</text>
+
+  <!-- 仮 mark -->
+  <text x="44" y="566" font-family="'Shippori Mincho', serif" font-size="13" fill="#f0e6c8" opacity="0.45" letter-spacing="4">仮画像 · ILLUSTRATION</text>
+</svg>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="テロワール・セレクション 泥付き木箱">
+  <defs>
+    <linearGradient id="terroir-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d2818"/>
+      <stop offset="1" stop-color="#1c110a"/>
+    </linearGradient>
+    <linearGradient id="crate-wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c5735"/>
+      <stop offset="0.5" stop-color="#5f3f25"/>
+      <stop offset="1" stop-color="#3d2614"/>
+    </linearGradient>
+    <linearGradient id="crate-side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3a20"/>
+      <stop offset="1" stop-color="#7c5735"/>
+    </linearGradient>
+    <radialGradient id="mud-pot" cx="0.3" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#d29669"/>
+      <stop offset="0.5" stop-color="#8a5533"/>
+      <stop offset="1" stop-color="#3f2412"/>
+    </radialGradient>
+    <filter id="terroir-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#terroir-bg)"/>
+  <!-- faint earth dust -->
+  <g opacity="0.12" fill="#b5855c">
+    <circle cx="80" cy="120" r="1.5"/>
+    <circle cx="150" cy="80" r="1.2"/>
+    <circle cx="260" cy="110" r="1.5"/>
+    <circle cx="720" cy="90" r="1.5"/>
+    <circle cx="670" cy="140" r="1.2"/>
+    <circle cx="550" cy="60" r="1.5"/>
+    <circle cx="60" cy="200" r="1.2"/>
+    <circle cx="740" cy="220" r="1.5"/>
+  </g>
+  <!-- crate shadow -->
+  <ellipse cx="400" cy="460" rx="340" ry="16" fill="#000000" opacity="0.6" filter="url(#terroir-shadow)"/>
+  <!-- crate body -->
+  <rect x="70" y="190" width="660" height="265" rx="3" fill="url(#crate-wood)"/>
+  <!-- plank seams (horizontal) -->
+  <line x1="70" y1="250" x2="730" y2="250" stroke="#28170b" stroke-width="2.5" opacity="0.85"/>
+  <line x1="70" y1="320" x2="730" y2="320" stroke="#28170b" stroke-width="2.5" opacity="0.85"/>
+  <line x1="70" y1="390" x2="730" y2="390" stroke="#28170b" stroke-width="2.5" opacity="0.85"/>
+  <!-- plank highlights -->
+  <line x1="70" y1="210" x2="730" y2="210" stroke="#9a7148" stroke-width="0.8" opacity="0.5"/>
+  <line x1="70" y1="270" x2="730" y2="270" stroke="#9a7148" stroke-width="0.8" opacity="0.5"/>
+  <line x1="70" y1="340" x2="730" y2="340" stroke="#9a7148" stroke-width="0.8" opacity="0.5"/>
+  <!-- end uprights -->
+  <rect x="70" y="190" width="28" height="265" fill="url(#crate-side)" opacity="0.92"/>
+  <rect x="702" y="190" width="28" height="265" fill="url(#crate-side)" opacity="0.92"/>
+  <!-- nails -->
+  <g fill="#c7b48d">
+    <circle cx="84" cy="205" r="3"/>
+    <circle cx="84" cy="440" r="3"/>
+    <circle cx="716" cy="205" r="3"/>
+    <circle cx="716" cy="440" r="3"/>
+  </g>
+  <!-- wood grain streaks -->
+  <g stroke="#2c1a0c" stroke-width="0.6" opacity="0.4" fill="none">
+    <path d="M 130 220 Q 250 227 380 222 T 650 224"/>
+    <path d="M 150 290 Q 300 297 440 292 T 680 294"/>
+    <path d="M 120 360 Q 270 367 400 362 T 660 364"/>
+    <path d="M 160 420 Q 320 427 460 422 T 680 424"/>
+  </g>
+  <!-- straw bits -->
+  <g opacity="0.75" stroke="#d4b877" stroke-width="2" stroke-linecap="round" fill="none">
+    <path d="M 120 188 L 148 172 L 172 186"/>
+    <path d="M 190 188 L 206 170"/>
+    <path d="M 610 188 L 636 172 L 660 186"/>
+    <path d="M 572 186 L 590 166"/>
+    <path d="M 400 188 L 420 168 L 438 188"/>
+  </g>
+  <!-- muddy potatoes (back row) -->
+  <g>
+    <ellipse cx="155" cy="275" rx="34" ry="26" fill="url(#mud-pot)"/>
+    <ellipse cx="225" cy="268" rx="38" ry="28" fill="url(#mud-pot)"/>
+    <ellipse cx="300" cy="278" rx="40" ry="30" fill="url(#mud-pot)"/>
+    <ellipse cx="378" cy="268" rx="42" ry="32" fill="url(#mud-pot)"/>
+    <ellipse cx="456" cy="278" rx="40" ry="30" fill="url(#mud-pot)"/>
+    <ellipse cx="530" cy="268" rx="42" ry="32" fill="url(#mud-pot)"/>
+    <ellipse cx="606" cy="278" rx="38" ry="28" fill="url(#mud-pot)"/>
+    <ellipse cx="672" cy="274" rx="30" ry="22" fill="url(#mud-pot)"/>
+  </g>
+  <!-- front row -->
+  <g>
+    <ellipse cx="175" cy="355" rx="42" ry="32" fill="url(#mud-pot)"/>
+    <ellipse cx="255" cy="365" rx="44" ry="34" fill="url(#mud-pot)"/>
+    <ellipse cx="338" cy="355" rx="42" ry="32" fill="url(#mud-pot)"/>
+    <ellipse cx="420" cy="365" rx="44" ry="34" fill="url(#mud-pot)"/>
+    <ellipse cx="502" cy="355" rx="42" ry="32" fill="url(#mud-pot)"/>
+    <ellipse cx="584" cy="365" rx="44" ry="34" fill="url(#mud-pot)"/>
+    <ellipse cx="658" cy="355" rx="36" ry="28" fill="url(#mud-pot)"/>
+  </g>
+  <!-- red earth highlights on a few -->
+  <g fill="#a25c2c" opacity="0.55">
+    <ellipse cx="220" cy="262" rx="10" ry="4"/>
+    <ellipse cx="372" cy="262" rx="12" ry="4"/>
+    <ellipse cx="528" cy="262" rx="10" ry="4"/>
+    <ellipse cx="250" cy="358" rx="14" ry="5"/>
+    <ellipse cx="418" cy="358" rx="14" ry="5"/>
+    <ellipse cx="582" cy="358" rx="14" ry="5"/>
+  </g>
+  <!-- label -->
+  <g transform="translate(50, 55)">
+    <rect x="0" y="0" width="260" height="82" rx="4" fill="#f2e4c7" opacity="0.95" stroke="#8a5d3d" stroke-width="1"/>
+    <text x="18" y="32" font-family="'Shippori Mincho', serif" font-size="15" fill="#8a5d3d" letter-spacing="5">LINE 貳</text>
+    <line x1="18" y1="42" x2="170" y2="42" stroke="#8a5d3d" stroke-width="0.6"/>
+    <text x="18" y="62" font-family="'Shippori Mincho', serif" font-size="18" fill="#3a2016" font-weight="700">TERROIR</text>
+    <text x="18" y="76" font-family="sans-serif" font-size="10" fill="#8a5d3d">泥付き・木箱でお届け</text>
+  </g>
+  <!-- watermark -->
+  <text x="740" y="482" text-anchor="end" font-family="sans-serif" font-size="10" fill="#c7a77a" opacity="0.6">仮画像 · ILLUSTRATION</text>
+</svg>

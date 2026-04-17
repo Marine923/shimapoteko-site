@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="赤土の宝石箱（仮画像）">
+  <defs>
+    <radialGradient id="bgBox" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#7a3e25"/>
+      <stop offset="60%" stop-color="#54281a"/>
+      <stop offset="100%" stop-color="#2f1810"/>
+    </radialGradient>
+    <linearGradient id="boxSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8c623e"/>
+      <stop offset="100%" stop-color="#5d3a20"/>
+    </linearGradient>
+    <linearGradient id="boxInside" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a2734a"/>
+      <stop offset="100%" stop-color="#6b4528"/>
+    </linearGradient>
+    <radialGradient id="taterMuddy" cx="32%" cy="26%" r="78%">
+      <stop offset="0%" stop-color="#c9a26f"/>
+      <stop offset="40%" stop-color="#8c6236"/>
+      <stop offset="80%" stop-color="#5a3a1c"/>
+      <stop offset="100%" stop-color="#2f1b0b"/>
+    </radialGradient>
+    <radialGradient id="mud" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#8c3f22" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#8c3f22" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softshd3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgBox)"/>
+
+  <!-- soft light streaks -->
+  <g opacity="0.1">
+    <ellipse cx="200" cy="160" rx="240" ry="120" fill="#f4d99b"/>
+  </g>
+
+  <!-- burlap corner hint (top-left) -->
+  <g opacity="0.25" stroke="#c9a86a" stroke-width="0.6">
+    <path d="M 0 0 L 140 0 L 140 30 L 0 30 Z" fill="#7a5a32" opacity="0.4"/>
+    <line x1="0" y1="6" x2="140" y2="6"/>
+    <line x1="0" y1="12" x2="140" y2="12"/>
+    <line x1="0" y1="18" x2="140" y2="18"/>
+    <line x1="0" y1="24" x2="140" y2="24"/>
+    <line x1="20" y1="0" x2="20" y2="30"/>
+    <line x1="50" y1="0" x2="50" y2="30"/>
+    <line x1="80" y1="0" x2="80" y2="30"/>
+    <line x1="110" y1="0" x2="110" y2="30"/>
+  </g>
+
+  <!-- wooden box — perspective top-down view -->
+  <!-- outer shadow -->
+  <rect x="90" y="120" width="620" height="400" fill="#1a0d07" opacity="0.6" filter="url(#softshd3)"/>
+
+  <!-- box body -->
+  <rect x="100" y="130" width="600" height="380" fill="url(#boxSide)"/>
+  <!-- box inside bottom -->
+  <rect x="130" y="160" width="540" height="320" fill="url(#boxInside)"/>
+  <!-- wood grain on inside -->
+  <g opacity="0.2" stroke="#3d1f0b" stroke-width="0.8" fill="none">
+    <path d="M 130 200 Q 400 206 670 198"/>
+    <path d="M 130 260 Q 400 266 670 258"/>
+    <path d="M 130 320 Q 400 326 670 318"/>
+    <path d="M 130 380 Q 400 376 670 384"/>
+    <path d="M 130 440 Q 400 446 670 438"/>
+  </g>
+  <!-- box corner joinery -->
+  <g fill="#3d1f0b" opacity="0.55">
+    <rect x="130" y="160" width="8" height="320"/>
+    <rect x="662" y="160" width="8" height="320"/>
+    <rect x="130" y="160" width="540" height="6"/>
+    <rect x="130" y="474" width="540" height="6"/>
+  </g>
+
+  <!-- muddy potatoes inside -->
+  <g opacity="0.55">
+    <ellipse cx="260" cy="380" rx="70" ry="14" fill="#1a0d07" filter="url(#softshd3)"/>
+    <ellipse cx="400" cy="390" rx="90" ry="16" fill="#1a0d07" filter="url(#softshd3)"/>
+    <ellipse cx="540" cy="375" rx="72" ry="14" fill="#1a0d07" filter="url(#softshd3)"/>
+    <ellipse cx="320" cy="260" rx="65" ry="12" fill="#1a0d07" filter="url(#softshd3)"/>
+    <ellipse cx="480" cy="250" rx="68" ry="12" fill="#1a0d07" filter="url(#softshd3)"/>
+  </g>
+
+  <!-- back row potatoes (muddy) -->
+  <g transform="translate(320 235) rotate(-10)">
+    <ellipse rx="62" ry="48" fill="url(#taterMuddy)"/>
+    <ellipse rx="32" ry="22" cx="-14" cy="-16" fill="#c9a26f" opacity="0.35"/>
+    <ellipse rx="38" ry="28" cx="18" cy="10" fill="url(#mud)"/>
+    <ellipse rx="14" ry="10" cx="-20" cy="12" fill="url(#mud)"/>
+    <circle cx="6" cy="-8" r="1.6" fill="#1a0d07" opacity="0.7"/>
+  </g>
+  <g transform="translate(480 225) rotate(12)">
+    <ellipse rx="66" ry="52" fill="url(#taterMuddy)"/>
+    <ellipse rx="34" ry="22" cx="-14" cy="-18" fill="#c9a26f" opacity="0.3"/>
+    <ellipse rx="42" ry="30" cx="14" cy="14" fill="url(#mud)"/>
+    <ellipse rx="12" ry="8" cx="-22" cy="-6" fill="url(#mud)"/>
+    <circle cx="10" cy="-4" r="1.6" fill="#1a0d07" opacity="0.7"/>
+  </g>
+
+  <!-- front row potatoes (muddy) -->
+  <g transform="translate(260 355) rotate(-14)">
+    <ellipse rx="70" ry="56" fill="url(#taterMuddy)"/>
+    <ellipse rx="36" ry="24" cx="-16" cy="-18" fill="#c9a26f" opacity="0.32"/>
+    <ellipse rx="44" ry="30" cx="16" cy="12" fill="url(#mud)"/>
+    <ellipse rx="18" ry="12" cx="-24" cy="14" fill="url(#mud)"/>
+    <circle cx="8" cy="-10" r="2" fill="#1a0d07" opacity="0.75"/>
+  </g>
+  <g transform="translate(400 370) rotate(8)">
+    <ellipse rx="86" ry="66" fill="url(#taterMuddy)"/>
+    <ellipse rx="44" ry="28" cx="-20" cy="-24" fill="#c9a26f" opacity="0.35"/>
+    <ellipse rx="52" ry="36" cx="18" cy="16" fill="url(#mud)"/>
+    <ellipse rx="20" ry="14" cx="-30" cy="18" fill="url(#mud)"/>
+    <circle cx="14" cy="-12" r="2.2" fill="#1a0d07" opacity="0.75"/>
+    <circle cx="-16" cy="20" r="1.8" fill="#1a0d07" opacity="0.7"/>
+  </g>
+  <g transform="translate(540 360) rotate(18)">
+    <ellipse rx="70" ry="54" fill="url(#taterMuddy)"/>
+    <ellipse rx="36" ry="24" cx="-16" cy="-20" fill="#c9a26f" opacity="0.32"/>
+    <ellipse rx="44" ry="30" cx="14" cy="12" fill="url(#mud)"/>
+    <ellipse rx="16" ry="10" cx="-26" cy="8" fill="url(#mud)"/>
+    <circle cx="10" cy="-8" r="1.8" fill="#1a0d07" opacity="0.7"/>
+  </g>
+
+  <!-- clear window overlay (glass) -->
+  <rect x="130" y="160" width="540" height="320" fill="#ffffff" opacity="0.04"/>
+  <path d="M 130 160 L 300 160 L 200 280 L 130 280 Z" fill="#ffffff" opacity="0.08"/>
+
+  <!-- lid brand plate -->
+  <rect x="340" y="520" width="120" height="40" fill="#3d2010" opacity="0.8"/>
+  <text x="400" y="546" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" fill="#d8b670" letter-spacing="4">島ポテこ</text>
+
+  <!-- 仮 mark -->
+  <text x="44" y="586" font-family="'Shippori Mincho', serif" font-size="13" fill="#f0e6c8" opacity="0.45" letter-spacing="4">仮画像 · ILLUSTRATION</text>
+</svg>
