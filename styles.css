@@ -131,10 +131,12 @@ img { max-width: 100%; display: block; }
 }
 .dropdown-panel a:hover { background: var(--paper); color: var(--akatsuchi); }
 .nav-item.has-dropdown:hover .dropdown-panel,
-.nav-item.has-dropdown:focus-within .dropdown-panel {
+.nav-item.has-dropdown:focus-within .dropdown-panel,
+.nav-item.has-dropdown.is-open .dropdown-panel {
   opacity: 1; pointer-events: auto; visibility: visible;
   transform: translateY(0);
 }
+.nav-item.has-dropdown.is-open .dd-caret { transform: rotate(180deg); opacity: 0.9; }
 
 /* Mobile nav toggle & menu */
 .nav-toggle {
