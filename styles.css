@@ -37,6 +37,33 @@ html, body {
   text-rendering: optimizeLegibility;
 }
 
+/* ページ全体に薄い和紙グレイン（極薄。プリントっぽい温度を足す） */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.13 0 0 0 0 0.12 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+}
+
+/* ---------- Scroll Reveal ---------- */
+/* JSが付与する .reveal-on-scroll 要素を、初期状態は薄く・下にずらしておく */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll, .reveal-on-scroll.is-visible {
+    opacity: 1; transform: none; transition: none;
+  }
+}
+
 .font-mincho {
   font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
 }
@@ -201,74 +228,164 @@ body.menu-open { overflow: hidden; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative; overflow: hidden; color: var(--ivory);
-  min-height: 78vh; display: flex; align-items: center;
+  min-height: 86vh; display: flex; align-items: center;
 }
+/* 多層構成：① 暖色グラデ ② 上下のヴィネット ③ 朝霧の光 ④ 微細粒子 */
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 25% 20%, rgba(217, 190, 141, 0.45) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(125, 61, 38, 0.8) 0%, transparent 60%),
-    linear-gradient(170deg, #c98b5f 0%, #a4583a 45%, #6b3a24 100%);
+    /* ④ 微細粒子（後ろに配置） */
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0) 0 0 / 22px 22px,
+    /* ③ 朝霧の光（左上から差し込む） */
+    radial-gradient(ellipse 90% 60% at 18% 12%, rgba(245, 220, 175, 0.42) 0%, transparent 55%),
+    /* ② 右下の深い影 */
+    radial-gradient(ellipse 80% 70% at 88% 92%, rgba(70, 30, 18, 0.85) 0%, transparent 60%),
+    /* ① ベースの斜めグラデ */
+    linear-gradient(168deg, #c98b5f 0%, #a4583a 38%, #7a3d22 78%, #4d2414 100%);
 }
+/* ゆったりドリフト（10秒周期で気づかない程度に動く） */
+.hero-bg::before {
+  content: ""; position: absolute; inset: -8%;
+  background:
+    radial-gradient(ellipse 30% 20% at 30% 30%, rgba(255, 220, 170, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 18% at 70% 65%, rgba(255, 240, 210, 0.10) 0%, transparent 60%);
+  filter: blur(14px);
+  animation: heroDrift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes heroDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-3%, 1.5%) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg::before { animation: none; }
+}
+/* 上下に向かうヴィネット（ロゴ部に少し馴染ませる） */
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
-  background-size: 24px 24px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 14%, transparent 78%, rgba(0,0,0,0.22) 100%);
+  pointer-events: none;
 }
-.hero-inner { position: relative; padding: 6rem 1.5rem; width: 100%; }
+.hero-inner { position: relative; padding: 6.5rem 1.5rem 7.5rem; width: 100%; }
 .hero-eyebrow {
   font-family: 'Shippori Mincho', serif;
-  font-size: 0.8rem; letter-spacing: 0.4em; margin-bottom: 1.5rem;
+  font-size: 0.78rem; letter-spacing: 0.42em; margin-bottom: 1.6rem;
   color: var(--kogane-soft);
+  display: inline-flex; align-items: center; gap: 0.85rem;
+  padding-left: 0.05em;
+}
+/* 縦の細い線 + 小さな印 */
+.hero-eyebrow::before {
+  content: ""; display: inline-block;
+  width: 28px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--kogane-soft));
 }
 .hero h1 {
-  font-size: clamp(1.75rem, 5.5vw, 4.4rem);
-  color: var(--ivory); margin: 0 0 1.5rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  font-size: clamp(2rem, 6vw, 5rem);
+  color: var(--ivory); margin: 0 0 1.6rem;
+  letter-spacing: 0.04em;
+  line-height: 1.32;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  font-weight: 500;
 }
 .hero p.lead {
-  font-size: clamp(1rem, 1.3vw, 1.15rem); max-width: 36rem;
-  color: rgba(255, 255, 255, 0.92); margin: 0 0 2.5rem;
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.88); margin: 0 0 2.6rem;
+  line-height: 1.95;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+/* 下端のスクロールキュー（薄い縦線 + 文字） */
+.hero-scroll-cue {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.68rem; letter-spacing: 0.4em;
+  pointer-events: none;
+}
+.hero-scroll-cue::after {
+  content: ""; width: 1px; height: 38px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.55), transparent);
+  animation: scrollCue 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes scrollCue {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.55); }
+  50%      { opacity: 0.9; transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue::after { animation: none; opacity: 0.6; }
+}
+@media (max-width: 640px) {
+  .hero-scroll-cue { display: none; }
+}
 
 /* ---------- Buttons ---------- */
 .btn {
-  display: inline-block; padding: 0.9rem 2rem;
-  font-size: 0.95rem; letter-spacing: 0.08em;
+  display: inline-flex; align-items: center; gap: 0.55em;
+  padding: 0.95rem 2.1rem;
+  font-size: 0.92rem; letter-spacing: 0.12em;
   border: 1px solid transparent; cursor: pointer;
-  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+  transition: transform 0.18s ease, background 0.25s ease, color 0.25s ease,
+              box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+/* ホバーで右にスライドする極細矢印（&rarr;ではなくCSS線で品よく） */
+.btn::after {
+  content: ""; display: inline-block;
+  width: 1.1em; height: 1px;
+  background: currentColor;
+  margin-left: 0.1em;
+  transition: width 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.7;
 }
 .btn:hover { transform: translateY(-1px); }
+.btn:hover::after { width: 1.6em; opacity: 1; }
 .btn-primary { background: var(--ivory); color: var(--sumi); }
-.btn-primary:hover { background: var(--kogane-soft); }
-.btn-outline { border-color: var(--ivory); color: var(--ivory); }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
+.btn-primary:hover { background: var(--kogane-soft); box-shadow: 0 10px 24px -10px rgba(42,34,32,0.35); }
+.btn-outline { border-color: rgba(255,255,255,0.85); color: var(--ivory); }
+.btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--ivory); }
 .btn-dark { background: var(--sumi); color: var(--ivory); }
-.btn-dark:hover { background: var(--matcha-deep); }
+.btn-dark:hover { background: var(--matcha-deep); box-shadow: 0 10px 24px -10px rgba(42,34,32,0.45); }
 .btn-earth { background: var(--akatsuchi); color: var(--ivory); }
-.btn-earth:hover { background: var(--akatsuchi-deep); }
+.btn-earth:hover { background: var(--akatsuchi-deep); box-shadow: 0 10px 24px -10px rgba(125,61,38,0.45); }
+/* 矢印を出したくないボタン（テキストリンク的に使うとき）は .btn--noarrow を付ける */
+.btn--noarrow::after { display: none; }
 
 /* ---------- Section base ---------- */
-section { padding: 5.5rem 0; }
-.section-head { text-align: center; margin-bottom: 3.5rem; }
+section { padding: 6rem 0; }
+.section-head {
+  text-align: center; margin-bottom: 3.8rem;
+  display: flex; flex-direction: column; align-items: center;
+}
+/* エディトリアル風のアイブロー：左右の線をやめ、上下に短い縦線を配置 */
 .section-eyebrow {
   font-family: 'Shippori Mincho', serif;
-  font-size: 0.75rem; letter-spacing: 0.4em;
-  color: var(--akatsuchi); margin-bottom: 0.75rem;
-  display: inline-block;
+  font-size: 0.72rem; letter-spacing: 0.42em;
+  color: var(--akatsuchi); margin-bottom: 1.1rem;
+  display: inline-flex; flex-direction: column; align-items: center; gap: 0.7rem;
+  line-height: 1;
+  padding-left: 0.05em; /* 字間調整による視覚中心ずれ補正 */
 }
-.section-eyebrow::before, .section-eyebrow::after {
-  content: ""; display: inline-block;
-  width: 1.5rem; height: 1px; background: var(--akatsuchi);
-  vertical-align: middle; margin: 0 0.75rem 4px;
+.section-eyebrow::before {
+  content: ""; display: block;
+  width: 1px; height: 26px;
+  background: linear-gradient(to bottom, transparent, var(--akatsuchi));
 }
+/* 旧 ::after は廃止（誤って残らないよう明示的にリセット） */
+.section-eyebrow::after { content: none; }
 .section-title {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   margin: 0 0 1rem;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
 }
-.section-desc { color: var(--sumi-soft); max-width: 38rem; margin: 0 auto; }
+.section-desc {
+  color: var(--sumi-soft); max-width: 38rem; margin: 0 auto;
+  line-height: 1.95;
+}
 
 /* ---------- Concept section ---------- */
 .section-concept { background: var(--ivory-soft); }
@@ -276,20 +393,40 @@ section { padding: 5.5rem 0; }
   display: grid; gap: 2rem;
   grid-template-columns: 1fr;
 }
-@media (min-width: 760px) { .concept-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+@media (min-width: 760px) {
+  .concept-grid {
+    grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  /* 縦の細い区切り線（中央2本） */
+  .concept-grid > .concept-card + .concept-card {
+    border-left: 1px solid var(--hai-light);
+  }
+}
 .concept-card {
-  text-align: center; padding: 2rem 1.5rem;
-  border-top: 1px solid var(--hai-light);
+  text-align: center; padding: 2.5rem 1.75rem;
+  position: relative;
+}
+@media (max-width: 759px) {
+  .concept-card { border-top: 1px solid var(--hai-light); }
 }
 .concept-num {
   font-family: 'Shippori Mincho', serif;
-  font-size: 2.2rem; color: var(--akatsuchi);
-  letter-spacing: 0.05em; margin-bottom: 0.5rem; line-height: 1;
+  font-size: 1.4rem; color: var(--akatsuchi);
+  margin: 0 auto 1.2rem;
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--akatsuchi);
+  border-radius: 50%;
+  letter-spacing: 0;
+  line-height: 1;
 }
 .concept-card h3 {
-  font-size: 1.25rem; margin: 0.5rem 0 1rem;
+  font-size: 1.18rem; margin: 0 0 1rem; letter-spacing: 0.04em;
 }
-.concept-card p { font-size: 0.95rem; color: var(--sumi-soft); margin: 0; }
+.concept-card p {
+  font-size: 0.92rem; color: var(--sumi-soft); margin: 0;
+  line-height: 1.95;
+}
 
 /* ---------- Products grid ---------- */
 /* カード幅を一定に保ちつつ、枚数が少ないセクションでも中央に整列するよう
@@ -386,63 +523,116 @@ section { padding: 5.5rem 0; }
 }
 
 /* ---------- Story section ---------- */
-.section-story { background: var(--matcha-deep); color: var(--ivory); }
+.section-story {
+  background: var(--matcha-deep); color: var(--ivory);
+  position: relative; overflow: hidden;
+}
+/* ふんわりとした暖色のスポット光（深い緑に温度を足す） */
+.section-story::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 35% at 18% 0%, rgba(217, 190, 141, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 35% at 90% 100%, rgba(164, 88, 58, 0.18) 0%, transparent 65%);
+}
+.section-story > * { position: relative; }
 .section-story .section-eyebrow { color: var(--kogane-soft); }
-.section-story .section-eyebrow::before, .section-story .section-eyebrow::after { background: var(--kogane-soft); }
-.section-story .section-desc { color: rgba(255,255,255,0.8); }
+.section-story .section-eyebrow::before { background: linear-gradient(to bottom, transparent, var(--kogane-soft)); }
+.section-story .section-desc { color: rgba(255,255,255,0.78); }
 .story-grid {
-  display: grid; gap: 2rem; margin-top: 3rem;
+  display: grid; gap: 0; margin-top: 3.2rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 760px) { .story-grid { grid-template-columns: repeat(3, 1fr); } }
+/* 箱組みをやめ、上に細線、項目間を縦線でだけ仕切るエディトリアル組 */
 .story-item {
-  padding: 2rem; background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2.5rem 1.75rem 0;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+@media (min-width: 760px) {
+  .story-item + .story-item { border-left: 1px solid rgba(255,255,255,0.12); }
+}
+@media (max-width: 759px) {
+  .story-item + .story-item { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 2rem; }
 }
 .story-item h3 {
-  font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--kogane-soft);
+  font-size: 1.15rem; margin: 0 0 0.9rem;
+  color: var(--kogane-soft);
+  letter-spacing: 0.05em;
 }
-.story-item p { font-size: 0.9rem; color: rgba(255,255,255,0.82); margin: 0; }
+.story-item p {
+  font-size: 0.9rem; color: rgba(255,255,255,0.78); margin: 0;
+  line-height: 1.95;
+}
 
 /* ---------- News section ---------- */
-.news-list { display: flex; flex-direction: column; gap: 0; max-width: 780px; margin: 0 auto; }
+.news-list { display: flex; flex-direction: column; gap: 0; max-width: 820px; margin: 0 auto; }
 .news-item {
-  display: grid; grid-template-columns: 110px 90px 1fr;
-  gap: 1.5rem; padding: 1.25rem 0;
+  display: grid; grid-template-columns: 110px 88px 1fr;
+  gap: 1.5rem; padding: 1.4rem 1rem 1.4rem 1.25rem;
   border-bottom: 1px solid var(--hai-light);
-  align-items: start;
+  align-items: center;
+  position: relative;
+  transition: background 0.25s ease, padding 0.25s ease;
 }
 .news-item:first-child { border-top: 1px solid var(--hai-light); }
-.news-date { font-family: 'Shippori Mincho', serif; font-size: 0.9rem; color: var(--sumi-soft); }
+/* ホバーで左に細線がスーッと現れる（編集記事的演出） */
+.news-item::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 0; height: 1px; background: var(--akatsuchi);
+  transform: translateY(-50%);
+  transition: width 0.32s ease;
+}
+.news-item:hover { background: rgba(164, 88, 58, 0.04); padding-left: 1.85rem; }
+.news-item:hover::before { width: 0.6rem; }
+.news-date {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.88rem; color: var(--sumi-soft);
+  letter-spacing: 0.04em;
+}
 .news-cat {
-  font-size: 0.7rem; letter-spacing: 0.15em;
-  padding: 0.25rem 0.5rem; background: var(--ivory-warm);
+  font-size: 0.68rem; letter-spacing: 0.18em;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--hai-light);
+  background: transparent;
   color: var(--akatsuchi-deep); text-align: center;
   font-family: 'Shippori Mincho', serif;
-  height: fit-content;
+  height: fit-content; justify-self: start;
 }
-.news-title { font-size: 0.95rem; }
+.news-title {
+  font-size: 0.95rem; line-height: 1.7;
+  transition: color 0.2s ease;
+}
 .news-title:hover { color: var(--akatsuchi); }
 @media (max-width: 640px) {
-  .news-item { grid-template-columns: 90px 1fr; }
+  .news-item { grid-template-columns: 90px 1fr; padding-left: 0.5rem; }
+  .news-item:hover { padding-left: 0.9rem; }
   .news-cat { display: none; }
 }
 
 /* ---------- B2B banner ---------- */
 .b2b-banner {
   background: var(--sumi); color: var(--ivory);
-  padding: 4rem 0; text-align: center; position: relative; overflow: hidden;
+  padding: 5rem 0; text-align: center; position: relative; overflow: hidden;
 }
+/* 多層の暖色スポット + 微細粒子で薄い質感を出す */
 .b2b-banner::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 80% 50%, rgba(164, 88, 58, 0.35) 0%, transparent 60%);
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0) 0 0 / 22px 22px,
+    radial-gradient(ellipse 60% 70% at 90% 50%, rgba(164, 88, 58, 0.42) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 8% 100%, rgba(74, 93, 58, 0.32) 0%, transparent 65%);
 }
 .b2b-banner > * { position: relative; }
 .b2b-banner .section-eyebrow { color: var(--kogane-soft); }
-.b2b-banner .section-eyebrow::before, .b2b-banner .section-eyebrow::after { background: var(--kogane-soft); }
-.b2b-banner h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 1rem; }
-.b2b-banner p { max-width: 38rem; margin: 0 auto 2rem; color: rgba(255,255,255,0.85); }
+.b2b-banner .section-eyebrow::before { background: linear-gradient(to bottom, transparent, var(--kogane-soft)); }
+.b2b-banner h2 {
+  font-size: clamp(1.6rem, 2.7vw, 2.15rem);
+  margin: 0 0 1.1rem; letter-spacing: 0.04em;
+}
+.b2b-banner p {
+  max-width: 38rem; margin: 0 auto 2.2rem;
+  color: rgba(255,255,255,0.82); line-height: 1.95;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
