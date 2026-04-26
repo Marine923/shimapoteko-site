@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>島アスこ — 壱岐の細アスパラ｜壱岐畑</title>
+<meta name="description" content="細い・短い・曲がっているというだけで畑に置き去りにされる若槍たち。壱岐畑の第二弾シリーズ「島アスこ」。市場に乗らなかったアスパラを、朝採りで束ねてお届けします。準備中。">
+<link rel="icon" href="images/logo/logo-mark.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://marine923.github.io/shimapoteko-site/asuko.html">
+<meta name="theme-color" content="#a4583a">
+<meta property="og:site_name" content="壱岐畑">
+<meta property="og:title" content="島アスこ — 壱岐の細アスパラ｜壱岐畑">
+<meta property="og:description" content="細い・短い・曲がっているというだけで畑に置き去りにされる若槍たち。壱岐畑の第二弾シリーズ「島アスこ」、準備中。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marine923.github.io/shimapoteko-site/asuko.html">
+<meta property="og:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="島アスこ — 壱岐の細アスパラ｜壱岐畑">
+<meta name="twitter:description" content="細い・短い・曲がっているというだけで畑に置き去りにされる若槍たち。壱岐畑の第二弾シリーズ「島アスこ」、準備中。">
+<meta name="twitter:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* 島アスこ専用：ヒーロー＆ステータスバナー */
+  .asuko-hero { background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-soft) 100%); padding: 4rem 0 3rem; text-align: center; position: relative; }
+  .asuko-hero::before { content: ""; position: absolute; left: 50%; top: 0; width: 56px; height: 3px; background: var(--kogane); transform: translateX(-50%); }
+  .asuko-hero h1 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin: 0.6rem 0 1rem; }
+  .asuko-hero p { color: var(--sumi-soft); max-width: 36rem; margin: 0 auto; }
+  .status-banner { background: var(--kogane-soft); color: var(--sumi); padding: 1rem; text-align: center; font-size: 0.92rem; }
+  .status-banner strong { color: var(--akatsuchi); }
+  .season-table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: var(--paper); }
+  .season-table th, .season-table td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(42,34,32,0.1); text-align: left; vertical-align: top; }
+  .season-table th { width: 30%; color: var(--sumi-soft); font-weight: 600; font-size: 0.9rem; background: var(--ivory-soft); }
+  @media (max-width: 720px) {
+    .asuko-hero { padding: 2.5rem 0 2rem; }
+    .season-table th { width: 36%; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+      <svg viewBox="0 0 112 100" role="img" aria-label="壱岐畑" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>壱岐畑</title>
+        <line x1="0" y1="86" x2="112" y2="86" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="74" cy="22" r="13" fill="#b04a2e"/>
+        <path d="M6 86 Q10 54 30 48 Q52 42 64 56 Q72 64 76 86 Z" fill="currentColor"/>
+        <path d="M76 86 Q82 68 94 64 Q104 61 110 78 L112 86 Z" fill="#b04a2e"/>
+        <g stroke="currentColor" stroke-width="1.4" opacity=".4">
+          <line x1="0" y1="94" x2="8" y2="94"/>
+          <line x1="14" y1="94" x2="26" y2="94"/>
+          <line x1="32" y1="94" x2="46" y2="94"/>
+          <line x1="52" y1="94" x2="66" y2="94"/>
+          <line x1="72" y1="94" x2="86" y2="94"/>
+          <line x1="92" y1="94" x2="106" y2="94"/>
+        </g>
+      </svg>
+    </span>
+      <span>
+        <div class="brand-name">壱岐畑</div>
+        <div class="brand-sub">IKIBATAKE</div>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="products.html">商品</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="recipes.html">レシピ帖</a>
+      <a href="restaurants.html">レストランの方へ</a>
+      <a href="news.html">お知らせ</a>
+    </nav>
+    <a href="#" class="header-cta" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+    <button class="nav-toggle" aria-label="メニューを開く" onclick="document.body.classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" aria-label="モバイルメニュー">
+  <div class="menu-sub">SHOP</div>
+  <a href="products.html">商品一覧</a>
+  <a href="asuko.html">島アスこ</a>
+  <a href="gift.html">ギフト</a>
+  <a href="recipes.html">レシピ帖</a>
+  <a href="news.html">お知らせ</a>
+  <div class="menu-sub">STORY</div>
+  <a href="index.html#story">テロワール</a>
+  <a href="producers.html">生産者紹介</a>
+  <div class="menu-sub">BUSINESS</div>
+  <a href="restaurants.html">レストランの方へ</a>
+  <div class="menu-sub">ABOUT</div>
+  <a href="about.html">会社概要</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tokutei.html">特定商取引法に基づく表記</a>
+  <a href="#" class="cart" onclick="event.preventDefault(); alert('試作版ではカート機能は未実装です。');">カート（0）</a>
+</div>
+
+<main>
+
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="index.html">ホーム</a>
+    <span class="sep">／</span>
+    <a href="products.html">商品一覧</a>
+    <span class="sep">／</span>
+    <span>島アスこ</span>
+  </div>
+</nav>
+
+<section class="asuko-hero">
+  <div class="container">
+    <span class="section-eyebrow">SHIMA ASUKO ／ SERIES 02</span>
+    <h1>島アスこ — 壱岐の細アスパラ</h1>
+    <p>細い・短い・曲がっているというだけで畑に置き去りにされてきた、壱岐の若槍たちのためのシリーズ。</p>
+  </div>
+</section>
+
+<div class="status-banner">
+  <strong>準備中</strong>　／　初出荷は2026年 春芽（4月下旬〜5月上旬）を予定しています。
+</div>
+
+<!-- ==================== VISION ==================== -->
+<section id="vision">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">VISION</span>
+      <h2 class="section-title">規格外と呼ばれた、若槍たち。</h2>
+      <p class="section-desc">アスパラ農家には「捨て芽」と呼ばれる芽があります。細すぎる、短すぎる、曲がっている──。<br class="pc-only">けれど折ってみればすぐ分かる。味は、ぜんぶ同じ畑の味です。</p>
+    </div>
+    <div style="max-width: 38rem; margin: 0 auto; color: var(--sumi-soft); line-height: 1.95;">
+      <p>
+        壱岐の畑では、毎春・毎夏、規格に乗らないアスパラが大量に折られたまま土に還っていきます。
+        スーパーの棚に並ぶには「太さ」「長さ」「真っ直ぐさ」が要る。
+        けれどそれは流通の都合であって、味の都合ではありません。
+      </p>
+      <p>
+        「島アスこ」は、その規格から外れた若槍たちを朝のうちに束ね、
+        洗わず、立てたまま、最短の動線でお届けするシリーズです。
+        本数も、サイズも、まちまち。けれど、根元までやわらかく、
+        下処理いらずでそのまま焼ける──それが島アスこの約束です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LINEUP ==================== -->
+<section id="lineup" class="section-concept">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">LINEUP</span>
+      <h2 class="section-title">準備中のラインナップ</h2>
+      <p class="section-desc">2026年春芽の収穫スケジュールに合わせて、順次公開予定です。</p>
+    </div>
+    <div class="products-grid">
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">2026年 春芽予定</div>
+          <h3>島アスこ・朝採りパック</h3>
+          <p>その日の朝に折った若槍を、洗わずそのまま冷蔵パックで。みずみずしい甘みと、根元までやわらかい食感を。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／250g（4〜6本相当）</span></div>
+            <a href="contact.html" class="product-link">入荷連絡を希望 →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">2026年 春芽予定</div>
+          <h3>島アスこ・たっぷり束</h3>
+          <p>細さも長さもまちまち。けれど味はいちばん。家族の食卓やレストランの仕込み用にうれしい、たっぷり500gの束。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／500g（8〜12本相当）</span></div>
+            <a href="contact.html" class="product-link">入荷連絡を希望 →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">ギフト・開発中</div>
+          <h3>島アスこ × 島ポテこ ギフトボックス</h3>
+          <p>壱岐畑の二つのシリーズを、ひとつの木箱に。赤土の小粒と、朝採り若槍を組み合わせた、初夏の壱岐をまるごと贈る詰め合わせ。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／化粧箱</span></div>
+            <a href="contact.html" class="product-link">入荷連絡を希望 →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">業務用ロット</div>
+          <h3>島アスこ・業務用ロット</h3>
+          <p>飲食店・ホテル向けに、規格外の若槍を継続的にまとめてお届け。サイズ混合・通年（春夏芽）でご相談を承ります。</p>
+          <div class="product-meta">
+            <div class="product-price">要相談</div>
+            <a href="restaurants.html" class="product-link">レストラン向け →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEASON ==================== -->
+<section id="season">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">SEASON</span>
+      <h2 class="section-title">壱岐のアスパラ、ふたつの旬。</h2>
+      <p class="section-desc">アスパラは一年に二度、姿を変えて畑に立ちます。それぞれの季節で味も食感も変わるのが、島アスこの楽しみ方。</p>
+    </div>
+    <div style="max-width: 40rem; margin: 0 auto;">
+      <table class="season-table">
+        <tr><th>春芽（はるめ）</th><td>4月下旬〜5月上旬。冬の間に蓄えた糖をたっぷり含み、もっとも甘くやわらかい一番芽。<strong>初出荷の本命。</strong></td></tr>
+        <tr><th>夏芽（なつめ）</th><td>5月下旬〜8月。日差しを受けてシャキッと締まった芽。香りが強く、炒め物・天ぷらに向きます。</td></tr>
+        <tr><th>休眠期</th><td>9月〜翌年3月。畑を休ませ、株に栄養を戻す期間。この時期は出荷を行いません。</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="b2b-banner">
+  <div class="container">
+    <span class="section-eyebrow">PRE-REGISTER</span>
+    <h2>島アスこ、入荷のご案内を希望の方へ</h2>
+    <p>初出荷の準備が整い次第、ご登録いただいた方に最初にご案内いたします。サイズ・本数・お届け時期のご希望もあわせてお知らせください。</p>
+    <a href="contact.html" class="btn btn-earth">入荷連絡を希望する</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark">
+          <svg viewBox="0 0 112 100" role="img" aria-label="壱岐畑" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <title>壱岐畑</title>
+        <line x1="0" y1="86" x2="112" y2="86" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="74" cy="22" r="13" fill="#b04a2e"/>
+        <path d="M6 86 Q10 54 30 48 Q52 42 64 56 Q72 64 76 86 Z" fill="currentColor"/>
+        <path d="M76 86 Q82 68 94 64 Q104 61 110 78 L112 86 Z" fill="#b04a2e"/>
+        <g stroke="currentColor" stroke-width="1.4" opacity=".4">
+          <line x1="0" y1="94" x2="8" y2="94"/>
+          <line x1="14" y1="94" x2="26" y2="94"/>
+          <line x1="32" y1="94" x2="46" y2="94"/>
+          <line x1="52" y1="94" x2="66" y2="94"/>
+          <line x1="72" y1="94" x2="86" y2="94"/>
+          <line x1="92" y1="94" x2="106" y2="94"/>
+        </g>
+      </svg>
+        </span>
+          <span>
+            <div class="brand-name" style="color: var(--ivory);">壱岐畑</div>
+            <div class="brand-sub" style="color: var(--kogane-soft);">IKIBATAKE</div>
+          </span>
+        </div>
+        <p>長崎県壱岐市の畑から、行き場を失う島の野菜たちをお届けします。</p>
+      </div>
+      <div>
+        <h4>ショップ</h4>
+        <ul>
+          <li><a href="products.html">商品一覧</a></li>
+          <li><a href="asuko.html">島アスこ</a></li>
+          <li><a href="gift.html">ギフト</a></li>
+          <li><a href="restaurants.html">レストランの方へ</a></li>
+          <li><a href="shipping.html">配送について</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>壱岐畑について</h4>
+        <ul>
+          <li><a href="index.html#story">テロワール</a></li>
+          <li><a href="producers.html">生産者紹介</a></li>
+          <li><a href="recipes.html">レシピ帖</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ご利用案内</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokutei.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="about.html">会社概要</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 壱岐畑 / IKIBATAKE</div>
+      <div>長崎県壱岐市</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

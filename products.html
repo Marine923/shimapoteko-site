@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>商品一覧｜壱岐畑</title>
-<meta name="description" content="島ポテこの全ラインナップ。定番のひとくちパック、贈答用のギフト、季節限定のじゃがいも、加工品まで。壱岐の赤土が育てたちいさな黄金をご家庭へ。">
+<meta name="description" content="壱岐畑の全ラインナップ。第一弾「島ポテこ」（小粒じゃがいも）と第二弾「島アスこ」（壱岐の細アスパラ）。壱岐の畑から、行き場を失う島の野菜たちを。">
 <link rel="icon" href="images/logo/logo-mark.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#a4583a">
 <meta property="og:site_name" content="壱岐畑">
 <meta property="og:title" content="商品一覧｜壱岐畑">
-<meta property="og:description" content="島ポテこの全ラインナップ。定番・季節・ギフト・加工品。壱岐の赤土が育てた一粒を、暮らしのシーンに合わせて。">
+<meta property="og:description" content="壱岐畑の全ラインナップ。島ポテこ（小粒じゃがいも）と島アスこ（壱岐の細アスパラ）。行き場を失う島の野菜たちを、ひとつずつ。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marine923.github.io/shimapoteko-site/products.html">
 <meta property="og:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
@@ -21,9 +21,23 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="商品一覧｜壱岐畑">
-<meta name="twitter:description" content="島ポテこの全ラインナップ。定番・季節・ギフト・加工品。">
+<meta name="twitter:description" content="壱岐畑の全ラインナップ。島ポテこ（じゃがいも）と島アスこ（アスパラ）。">
 <meta name="twitter:image" content="https://marine923.github.io/shimapoteko-site/images/og-image.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* シリーズ見出しバナー（島ポテこ / 島アスこ） */
+  .series-banner { padding: 3.2rem 0 1rem; background: var(--ivory); position: relative; }
+  .series-banner::before {
+    content: ""; position: absolute; left: 50%; top: 0;
+    width: 56px; height: 3px; background: var(--akatsuchi); transform: translateX(-50%);
+  }
+  #shimaasuko.series-banner::before { background: var(--kogane); }
+  #shimaasuko.series-banner { padding-bottom: 5rem; background: var(--ivory-soft); }
+  @media (max-width: 720px) {
+    .series-banner { padding: 2rem 0 0.5rem; }
+    #shimaasuko.series-banner { padding-bottom: 3rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -97,19 +111,28 @@
 <section class="page-hero">
   <div class="container">
     <span class="section-eyebrow">LINEUP</span>
-    <h1>ちいさな島の、<br class="pc-only">全ラインナップ</h1>
-    <p>壱岐の赤土が育てた一粒を、暮らしのシーンに合わせて。定番のひとくちパックから、贈答用のギフト、季節限定品、じっくり仕込んだ加工品まで。</p>
+    <h1>壱岐の畑の、<br class="pc-only">ふたつのシリーズ</h1>
+    <p>第一弾は、ちいさな黄金「島ポテこ」（小粒じゃがいも）。第二弾は、若槍を救う「島アスこ」（壱岐の細アスパラ）。行き場を失いがちな島の野菜たちに、ひとつずつ名前と物語を与えてお届けします。</p>
   </div>
 </section>
 
 <nav class="category-nav">
   <div class="container">
-    <a href="#teiban">定番</a>
-    <a href="#kisetsu">季節</a>
-    <a href="#gift">ギフト</a>
-    <a href="#kakou">加工品</a>
+    <a href="#shimapoteko">島ポテこ</a>
+    <a href="#shimaasuko">島アスこ</a>
   </div>
 </nav>
+
+<!-- ==================== 島ポテこ シリーズバナー ==================== -->
+<section id="shimapoteko" class="series-banner">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">SERIES 01 ／ SHIMA POTEKO</span>
+      <h2 class="section-title">島ポテこ — 壱岐のちいさな黄金</h2>
+      <p class="section-desc">流通から外れがちな小粒・不揃いのじゃがいもを、赤土ごと活かして仕立てるシリーズ。定番ひとくちパックから贈答用、季節限定、加工品まで。</p>
+    </div>
+  </div>
+</section>
 
 <!-- ==================== 定番ライン ==================== -->
 <section id="teiban">
@@ -280,6 +303,86 @@
       <p style="color: var(--sumi-soft); font-size: 0.88rem; margin: 0;">
         加工品は現在試作中です。販売開始は<a href="news.html" style="color: var(--akatsuchi); border-bottom: 1px solid var(--akatsuchi);">お知らせ</a>でご案内いたします。
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 島アスこ シリーズ ==================== -->
+<section id="shimaasuko" class="series-banner">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">SERIES 02 ／ SHIMA ASUKO</span>
+      <h2 class="section-title">島アスこ — 壱岐の細アスパラ</h2>
+      <p class="section-desc">細い・短い・曲がっている、というだけで畑に置き去りにされる若槍たち。市場に乗らなかったアスパラを、朝採りで束ねてお届けする準備中のシリーズです。</p>
+    </div>
+    <div class="products-grid">
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">2026年 春芽予定</div>
+          <h3>島アスこ・朝採りパック</h3>
+          <p>その日の朝に畑で折った若槍を、洗わずそのまま冷蔵パックで。みずみずしい甘みと、根元までやわらかい食感を。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／250g（4〜6本相当）</span></div>
+            <a href="asuko.html" class="product-link">島アスこを見る →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">2026年 春芽予定</div>
+          <h3>島アスこ・たっぷり束</h3>
+          <p>細さも長さもまちまち。けれど味はいちばん。家族の食卓やレストランの仕込み用にうれしい、たっぷり500gの束。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／500g（8〜12本相当）</span></div>
+            <a href="asuko.html" class="product-link">島アスこを見る →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">ギフト・開発中</div>
+          <h3>島アスこ × 島ポテこ ギフトボックス</h3>
+          <p>壱岐畑の二つのシリーズを、ひとつの木箱に。赤土の小粒と、朝採り若槍を組み合わせた、初夏の壱岐をまるごと贈る詰め合わせ。</p>
+          <div class="product-meta">
+            <div class="product-price">準備中<span class="unit">／化粧箱</span></div>
+            <a href="asuko.html" class="product-link">島アスこを見る →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card future">
+        <div class="product-image">
+          <span class="coming-soon-label">COMING SOON</span>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">業務用ロット</div>
+          <h3>島アスこ・業務用ロット</h3>
+          <p>飲食店・ホテル向けに、規格外の若槍を継続的にまとめてお届け。サイズ混合・通年（春夏芽）でご相談を承ります。</p>
+          <div class="product-meta">
+            <div class="product-price">要相談</div>
+            <a href="restaurants.html" class="product-link">レストラン向け →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="text-center" style="margin-top: 2.5rem;">
+      <p style="color: var(--sumi-soft); font-size: 0.9rem; margin: 0 0 1rem;">
+        島アスこは現在準備中です。販売開始のご案内を希望の方は、お問い合わせよりご登録ください。
+      </p>
+      <a href="asuko.html" class="btn btn-earth">島アスこの詳細を見る →</a>
     </div>
   </div>
 </section>
