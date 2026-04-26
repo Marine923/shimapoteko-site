@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="島ポテこ" fill="none">
+  <title>島ポテこ</title>
+  <rect width="128" height="128" rx="14" fill="#f4ede2"/>
+  <g transform="translate(8,18)">
+    <line x1="0" y1="86" x2="112" y2="86" stroke="#1c1814" stroke-width="1.6"/>
+    <circle cx="74" cy="22" r="13" fill="#b04a2e"/>
+    <path d="M6 86 Q10 54 30 48 Q52 42 64 56 Q72 64 76 86 Z" fill="#1c1814"/>
+    <path d="M76 86 Q82 68 94 64 Q104 61 110 78 L112 86 Z" fill="#b04a2e"/>
+    <g stroke="#1c1814" stroke-width="1.4" opacity=".4">
+      <line x1="0" y1="94" x2="8" y2="94"/>
+      <line x1="14" y1="94" x2="26" y2="94"/>
+      <line x1="32" y1="94" x2="46" y2="94"/>
+      <line x1="52" y1="94" x2="66" y2="94"/>
+      <line x1="72" y1="94" x2="86" y2="94"/>
+      <line x1="92" y1="94" x2="106" y2="94"/>
+    </g>
+  </g>
+</svg>
