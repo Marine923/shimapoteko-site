@@ -812,7 +812,7 @@ section { padding: 6rem 0; }
   font-family: 'Shippori Mincho', serif;
 }
 .line-card p { font-size: 0.9rem; color: var(--sumi-soft); margin: 0 0 1rem; }
-.line-card .fit { font-size: 0.85rem; color: var(--matcha-deep); font-weight: 500; }
+.line-card .fit { font-size: 0.82rem; color: var(--matcha-deep); font-weight: 500; margin-top: 0.5rem; }
 .line-card .product-link { display: inline-block; margin-top: 1.25rem; }
 
 .why-grid {
@@ -1446,4 +1446,498 @@ section { padding: 6rem 0; }
   /* eyebrow の上下マージン引き締め */
   .section-eyebrow { margin-bottom: 0.5rem; }
   .section-title { margin: 0 0 0.5rem; }
+}
+
+/* =====================================================================
+   Hero Photo Slideshow（ホームページのヒーローを写真スライドに置き換え）
+   - .hero-bg のグラデを白紙化し、その中に <ul class="hero-slides"> を入れる
+   - 各 <li class="hero-slide"> が 8秒ごとにクロスフェード（4枚 × 6s表示+2sフェード = 32秒周期）
+   - 文字可読性のため上に暗めのオーバーレイを重ねる（live g の雰囲気を踏襲）
+   ===================================================================== */
+.hero-bg.hero-bg--photos {
+  /* 写真読込前のフォールバック（暖色の暗色のみ）。
+     画像をフォールバックに置くとクロスフェード中に下から透けて
+     ゴーストになるので、純粋なソリッドカラーに留める */
+  background-color: #1a120c;
+}
+.hero-slides {
+  position: absolute; inset: 0;
+  list-style: none; margin: 0; padding: 0;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: heroSlideShow 32s infinite ease-in-out;
+  will-change: opacity, transform;
+}
+/* 4枚それぞれの登場タイミングをずらす（8秒ごとに切り替え）
+   1枚目はネガティブディレイで、最初から完全に表示された状態で始める */
+.hero-slide:nth-child(1) { animation-delay: -1.92s; }
+.hero-slide:nth-child(2) { animation-delay: 8s; }
+.hero-slide:nth-child(3) { animation-delay: 16s; }
+.hero-slide:nth-child(4) { animation-delay: 24s; }
+
+@keyframes heroSlideShow {
+  0%   { opacity: 0; transform: scale(1.06); }
+  6%   { opacity: 1; }
+  25%  { opacity: 1; transform: scale(1.00); }
+  31%  { opacity: 0; }
+  100% { opacity: 0; transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { animation: none; opacity: 1; }
+  .hero-slide:nth-child(n+2) { display: none; }
+}
+
+/* 文字可読性のため、写真の上に暖色寄りの暗いオーバーレイを重ねる
+   - 左側（テキストが乗る部分）はやや濃い目に
+   - 右側は薄めにして写真のディテールを残す */
+.hero-bg.hero-bg--photos::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    /* 左下〜中央のテキスト領域を暗めに（読みやすさ最優先） */
+    radial-gradient(ellipse 70% 80% at 15% 60%, rgba(20, 12, 8, 0.62) 0%, transparent 65%),
+    /* 右上の朝霧のハイライト（柔らかく） */
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(245, 220, 175, 0.10) 0%, transparent 55%),
+    /* 右下に深みを足す */
+    radial-gradient(ellipse 80% 80% at 88% 92%, rgba(40, 18, 10, 0.55) 0%, transparent 60%),
+    /* 全体に斜めのトーン落とし */
+    linear-gradient(170deg, rgba(20, 12, 8, 0.55) 0%, rgba(20, 12, 8, 0.30) 40%, rgba(20, 12, 8, 0.65) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+/* hero-bg::before（heroDrift）はそのまま使える。z-indexを念のため指定 */
+.hero-bg.hero-bg--photos::before { z-index: 3; }
+.hero-inner { z-index: 4; }
+.hero-scroll-cue { z-index: 4; }
+
+/* 旧 .hero-photo / .hero-text 構造のフォールバック（過去版互換） */
+.hero-photo, .hero-text { display: contents; }
+
+/* 写真ヒーロー上のテキストは可読性のためシャドウを強める */
+.hero:has(.hero-bg--photos) h1 {
+  text-shadow: 0 2px 36px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.45);
+}
+.hero:has(.hero-bg--photos) p.lead {
+  text-shadow: 0 1px 12px rgba(0,0,0,0.55);
+  color: rgba(255, 255, 255, 0.95);
+}
+.hero:has(.hero-bg--photos) .hero-eyebrow {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
+
+
+/* =====================================================================
+   Restaurants page — リデザイン（写真ヒーロー / シェフの声 / 価格 /
+   シーズンカレンダー / 資料DL）
+   ===================================================================== */
+
+/* B2B ヒーローでも写真スライドショーを使う場合の高さ調整 */
+.hero.hero-b2b { min-height: 56vh; }
+@media (min-width: 860px) { .hero.hero-b2b { min-height: 64vh; } }
+
+/* hero 下のスペックバッジ */
+.hero-b2b-badges {
+  margin-top: 2rem;
+  display: flex; flex-wrap: wrap;
+  align-items: center; gap: 0.5rem 1rem;
+  font-size: 0.78rem; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+}
+.hero-b2b-badges b {
+  font-family: 'Shippori Mincho', serif;
+  color: var(--kogane-soft);
+  font-weight: 500;
+  margin-right: 0.35em;
+}
+.hero-b2b-badges .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .hero-b2b-badges { font-size: 0.72rem; gap: 0.4rem 0.6rem; }
+  .hero-b2b-badges .dot { display: none; }
+}
+
+/* line-card のスペック表（価格・最小ロット・サイクル） */
+.line-spec {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem; margin: 1.25rem 0 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px dashed var(--hai);
+  border-bottom: 1px dashed var(--hai);
+}
+.line-spec > div { text-align: center; }
+.line-spec dt {
+  font-size: 0.66rem; letter-spacing: 0.12em;
+  color: var(--sumi-soft); font-family: 'Shippori Mincho', serif;
+  margin-bottom: 0.25rem;
+}
+.line-spec dd {
+  margin: 0;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.05rem; color: var(--akatsuchi);
+  font-weight: 500; line-height: 1.1;
+}
+.line-spec dd span {
+  font-size: 0.7rem; color: var(--sumi-soft);
+  letter-spacing: 0.05em; font-weight: 400;
+  margin-left: 0.1em;
+}
+
+/* line-card に「人気No.1」バッジ */
+.line-card { position: relative; transition: transform 0.25s, box-shadow 0.25s; }
+.line-card:hover { transform: translateY(-2px); }
+.line-card--featured {
+  border-top: 3px solid var(--kogane);
+  background: var(--ivory);
+  box-shadow: 0 12px 32px -16px rgba(74, 51, 32, 0.28);
+}
+.line-card--featured:hover {
+  box-shadow: 0 16px 40px -16px rgba(74, 51, 32, 0.35);
+}
+.line-card--featured .line-spec dd { color: #b04a2e; }
+.line-badge {
+  position: absolute; top: 0; right: 1.25rem;
+  background: linear-gradient(135deg, #d0a85c 0%, #b88840 100%);
+  color: var(--ivory);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  padding: 0.4rem 0.95rem;
+  z-index: 2;
+  box-shadow: 0 3px 8px rgba(74, 51, 32, 0.25);
+}
+
+/* CHEF'S VOICE */
+.section-voices {
+  background:
+    linear-gradient(180deg, var(--ivory) 0%, var(--ivory-soft) 100%);
+}
+.voice-grid {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 2.5rem;
+}
+@media (min-width: 720px) { .voice-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .voice-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* シェフ実績スタッツ（採用軒数 / 継続率 / 都道府県） */
+.voice-stats {
+  margin: 2rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2.5rem;
+  max-width: 720px;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hai-light);
+}
+.voice-stat {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.voice-stat b {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.85rem; font-weight: 500;
+  color: var(--akatsuchi);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+.voice-stat b em {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--sumi-soft);
+  margin-left: 0.15em;
+  letter-spacing: 0.05em;
+}
+.voice-stat span {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--sumi-soft);
+  font-family: 'Shippori Mincho', serif;
+  margin-top: 0.25rem;
+}
+@media (max-width: 600px) {
+  .voice-stats { gap: 0.5rem 1.25rem; }
+  .voice-stat b { font-size: 1.5rem; }
+}
+
+.voice-card {
+  position: relative;
+  background: var(--ivory);
+  padding: 2.25rem 1.75rem 1.75rem;
+  margin: 0;
+  border: 1px solid var(--hai-light);
+  border-top: 3px solid var(--matcha-deep);
+  display: flex; flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.voice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -16px rgba(74, 51, 32, 0.22);
+}
+.voice-quote-mark {
+  position: absolute;
+  top: 0.5rem; left: 1.25rem;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 4.5rem; line-height: 1;
+  color: var(--kogane-soft);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.voice-card blockquote {
+  margin: 0; padding: 0; border: 0;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.98rem; line-height: 1.85;
+  color: var(--sumi);
+  flex: 1;
+}
+.voice-card blockquote p { margin: 0; }
+.voice-card figcaption {
+  border-top: 1px dashed var(--hai);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+.voice-meta {
+  display: flex; align-items: center; gap: 0.85rem;
+}
+.voice-avatar {
+  flex-shrink: 0;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--akatsuchi) 0%, #7a3d22 100%);
+  color: var(--ivory);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 4px rgba(0,0,0,0.08);
+}
+.voice-info { min-width: 0; flex: 1; }
+.voice-chef {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.05rem; color: var(--sumi);
+  margin-bottom: 0.15rem;
+  line-height: 1.3;
+}
+.voice-rest {
+  font-size: 0.78rem; color: var(--matcha-deep);
+  letter-spacing: 0.03em;
+  font-family: 'Shippori Mincho', serif;
+}
+.voice-rest span { color: var(--sumi-soft); margin-left: 0.2em; font-family: inherit; }
+.voice-line {
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px dotted var(--hai-light);
+  font-size: 0.72rem; letter-spacing: 0.08em;
+  color: var(--sumi-soft);
+}
+.voice-line b {
+  color: var(--akatsuchi);
+  font-weight: 500;
+  font-family: 'Shippori Mincho', serif;
+}
+
+/* SEASON CALENDAR */
+.section-schedule {
+  background: var(--ivory-soft);
+}
+.season-table {
+  margin-top: 2.5rem;
+  background: var(--ivory);
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--hai-light);
+}
+.season-row {
+  display: grid;
+  grid-template-columns: 130px repeat(8, 1fr);
+  align-items: center;
+  min-height: 38px;
+  position: relative;
+  border-bottom: 1px solid var(--hai-light);
+}
+.season-row:last-child { border-bottom: 0; }
+.season-row--head {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.78rem; color: var(--sumi-soft);
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--hai);
+  padding-bottom: 0.5rem; margin-bottom: 0.35rem;
+  min-height: 32px;
+}
+.season-row--head > div { text-align: center; }
+.season-row--head > div:first-child { text-align: left; padding-left: 0.25rem; }
+
+.season-label {
+  font-size: 0.82rem;
+  font-family: 'Shippori Mincho', serif;
+  color: var(--sumi);
+  padding-right: 0.75rem;
+}
+/* バーは grid-column を CSS変数 --start / --end で指定（1=4月のセル） */
+.season-bar {
+  grid-column: calc(var(--start) + 1) / calc(var(--end) + 2);
+  height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--matcha);
+  color: #fff;
+  font-size: 0.72rem; letter-spacing: 0.08em;
+  font-family: 'Shippori Mincho', serif;
+  border-radius: 2px;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.season-bar--prime { background: var(--akatsuchi); }
+.season-bar--rest  { background: var(--kogane-soft); color: var(--sumi); }
+.season-bar--off   { background: var(--hai); color: var(--sumi-soft); }
+
+/* mobile では横スクロールのラッパーを使う */
+.season-scroll { position: relative; }
+@media (max-width: 720px) {
+  .season-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    margin: 2rem -1.25rem 0;
+    padding: 0 1.25rem 0.5rem;
+  }
+  .season-scroll::after {
+    content: "← 横にスクロール →";
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--sumi-soft);
+    font-family: 'Shippori Mincho', serif;
+  }
+  .season-table {
+    padding: 1rem 0.75rem;
+    margin-top: 0;
+    min-width: 540px;
+  }
+  .season-row {
+    grid-template-columns: 90px repeat(8, 1fr);
+  }
+  .season-label { font-size: 0.74rem; }
+  .season-bar { font-size: 0.62rem; padding: 0 0.25rem; height: 22px; }
+}
+
+/* sp-only br: モバイルだけで改行する補助 */
+.sp-only { display: none; }
+@media (max-width: 600px) { .sp-only { display: inline; } }
+
+.schedule-note {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: var(--sumi-soft);
+  text-align: center;
+}
+
+/* RESOURCES / DOWNLOADS */
+.section-resources {
+  background: var(--ivory);
+}
+.resource-callout {
+  background: linear-gradient(135deg, #2a2220 0%, #3a2618 100%);
+  color: var(--ivory);
+  padding: 3rem 2rem;
+  border-top: 3px solid var(--kogane);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.resource-callout::before {
+  content: ""; position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(208, 168, 92, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+@media (min-width: 860px) {
+  .resource-callout {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    padding: 3.5rem 3rem;
+    align-items: center;
+  }
+}
+.resource-text .section-eyebrow {
+  color: var(--kogane-soft);
+  margin-bottom: 0.6rem;
+}
+.resource-text h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.7rem; line-height: 1.4;
+  margin: 0 0 0.85rem;
+  color: var(--ivory);
+}
+.resource-text p {
+  font-size: 0.9rem; line-height: 1.85;
+  color: rgba(255, 245, 230, 0.82);
+  margin: 0;
+}
+.resource-files {
+  display: grid; gap: 0.65rem;
+}
+.resource-file {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(208, 168, 92, 0.25);
+  color: var(--ivory);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.resource-file:hover {
+  background: rgba(208, 168, 92, 0.12);
+  border-color: var(--kogane);
+  transform: translateX(2px);
+}
+.resource-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  background: var(--akatsuchi);
+  color: var(--ivory);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.7rem; letter-spacing: 0.08em;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.resource-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+.resource-meta b {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.95rem; font-weight: 500;
+  color: var(--ivory);
+}
+.resource-meta em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: rgba(255, 245, 230, 0.65);
+  letter-spacing: 0.04em;
+}
+.resource-arrow {
+  font-size: 1.4rem; color: var(--kogane);
+  font-family: 'Shippori Mincho', serif;
+}
+
+@media (max-width: 600px) {
+  .resource-callout { padding: 2.25rem 1.25rem; }
+  .resource-text h2 { font-size: 1.35rem; }
+  .resource-file { grid-template-columns: auto 1fr; padding: 0.85rem 1rem; gap: 0.75rem; }
+  .resource-arrow { display: none; }
+  .resource-icon { width: 36px; height: 36px; font-size: 0.62rem; }
+  .resource-meta b { font-size: 0.88rem; }
 }
